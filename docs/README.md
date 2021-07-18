@@ -5,11 +5,12 @@ heroText: 写作是你对自己思想的研究和开发
 tagline: 记录一个普通人的工作、生活、理财
 actionText: 了解我? →
 actionLink: /about/
+
 features:
-- title: 工作
-  details: 目前从事测试开发，小小的质量工程师。
+- title: 技术
+  details: 目前从事质量相关工作，致力于一文说明白一个问题。期望成为全栈工程师。
 - title: 生活
-  details: 围绕衣食住行介绍生活中必经的事情，以及经验总结。
+  details: 介绍生活中遇到的衣食住行问题，以及经验总结。
 - title: 理财
   details: 坚定看好中国未来经济的向上趋势，定投基金及A股，期待财务自由那天。
 
@@ -28,9 +29,3 @@ footer: MIT Licensed | Copyright © 2018-present Evan You
 
 [bar - four](../bar/four.html) <!-- 也可以用 .html -->
 
-![](hero.png)
-
-## hahaha
-
-
-### demo

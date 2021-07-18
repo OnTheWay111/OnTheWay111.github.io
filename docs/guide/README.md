@@ -1,4 +1,3 @@
-# guide 
 
 ## 内部链接
 [Home](/) <!-- 跳转到根部的 README.md -->
@@ -74,11 +73,3 @@ export default { // Highlighted
  # text <Tag/> 
 
 ### Badge <Badge text="beta" type="warning"/> <Badge text="默认主题"/>
-
-[comment]: <> (<style lang="sass">)
-
-[comment]: <> (  .title)
-
-[comment]: <> (    font-size: 20px)
-
-[comment]: <> (</style>)
