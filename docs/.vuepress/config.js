@@ -130,4 +130,24 @@ module.exports = {
         editLinkText: '帮助改善此页面！'
 
     },
+
+    head: [
+        ['link', { rel: 'icon', href: '/image/favicon.ico' }],
+        ['script', {}, `
+        var _hmt = _hmt || [];
+            (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?64ae7cd356095ffe37f635a2b38d97c9";
+            var s = document.getElementsByTagName("script")[0]; 
+            s.parentNode.insertBefore(hm, s);
+        `]
+    ],
+    plugins: [
+        [
+          '@vuepress/google-analytics',
+          {
+            'ga': 'UA-149666038-1' // UA-00000000-0
+          }
+        ]
+      ]
 }

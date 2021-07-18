@@ -14,5 +14,7 @@
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs"
   },
-  "dependencies": {}
+  "dependencies": {
+    "@vssue/vuepress-plugin-vssue": "^1.4.8"
+  }
 }
