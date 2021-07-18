@@ -30,7 +30,7 @@ module.exports = {
                 items: [
                     {
                         text: 'HttpRunner V3.X', items: [
-                            {text: '中文文档', link: '/HttpRunner3DocsForCN/'},
+                            {text: '中文文档', link: 'https://ontheway.cool/HttpRunner3DocsForCN/'},
                             {text: '英文文档', link: 'https://docs.httprunner.org/'}
                         ]
                     },
@@ -56,7 +56,7 @@ module.exports = {
                 items: [
                     {
                         text: '孕产检育儿', items: [
-                            {text: '孕产检', link: '/pregnantBirth/', target: ''},
+                            {text: '孕产检', link: 'https://ontheway.cool/pregnantBirth/', target: ''},
                             // {text: '育儿', link: '/language/english/'}
                         ]
                     },
