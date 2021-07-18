@@ -1006,6 +1006,14 @@
     "@vssue/utils" "^1.4.7"
     "axios" "^0.21.1"
 
+"@vssue/api-github-v4@^1.4.7":
+  "integrity" "sha512-Tk4ZYyX03RwoVy29RW1+ZdqESzX/gLsN9010Eaq0WT/2pNV+8quyT9TMypIZp6rZCGNYTSdxB8ET4IiF7SLKXQ=="
+  "resolved" "https://registry.npmjs.org/@vssue/api-github-v4/-/api-github-v4-1.4.7.tgz"
+  "version" "1.4.7"
+  dependencies:
+    "@vssue/utils" "^1.4.7"
+    "axios" "^0.21.1"
+
 "@vssue/utils@^1.4.7":
   "integrity" "sha512-e94karP4szmSNT2L4bgIT+VGToBSY3bdlgmGcomcD2qCXTWDK4krSOYm8ES+BhHTcmCvzQYU/xenHR4tzrythA=="
   "resolved" "https://registry.npmjs.org/@vssue/utils/-/utils-1.4.7.tgz"

@@ -132,7 +132,7 @@ module.exports = {
     },
 
     head: [
-        ['link', { rel: 'icon', href: '/image/favicon.ico' }],
+        ['link', {rel: 'icon', href: '/image/favicon.ico'}],
         ['script', {}, `
         var _hmt = _hmt || [];
             (function() {
@@ -142,12 +142,18 @@ module.exports = {
             s.parentNode.insertBefore(hm, s);
         `]
     ],
-    plugins: [
-        [
-          '@vuepress/google-analytics',
-          {
-            'ga': 'UA-149666038-1' // UA-00000000-0
-          }
-        ]
-      ]
+    plugins: {
+        '@vssue/vuepress-plugin-vssue': {
+            // 设置平台，而不是 `api`
+            platform: 'github-v4',
+
+            // 其他的 Vssue 配置
+            owner: 'OnTheWay111', // 仓库的拥有者的名称
+            repo: 'blog_Comment', // 存储 Issue 和评论的仓库的名称
+            clientId: 'c80802ee19db4d6c44f9', // 刚保存下来的  Client ID
+            clientSecret: 'f350ad6d8e920a25091b1e8f3b7b24b87277ca4f', //  刚才保存下来的 Client secrets
+            autoCreateIssue: true,//自动创建评论
+
+        },
+    },
 }
