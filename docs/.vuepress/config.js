@@ -6,7 +6,7 @@ module.exports = {
         lineNumbers: true  // 代码行号
     },
     themeConfig: {
-        logo: 'logo.png',
+        logo: '/logo.png',
         navbar: true,  // 导航栏开关
         sidebarDepth: 2,  // 侧边栏标题深度
         displayAllHeaders: true, // 显示所有页面的标题链接
