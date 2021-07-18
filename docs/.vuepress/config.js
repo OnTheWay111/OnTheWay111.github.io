@@ -121,13 +121,13 @@ module.exports = {
         // 假如你的文档仓库和项目本身不在一个仓库：
         // docsRepo: 'vuejs/vuepress',
         // 假如文档不是放在仓库的根目录下：
-        docsDir: 'docs',
+        // docsDir: 'docs',
         // 假如文档放在一个特定的分支下：
-        docsBranch: 'master',
+        // docsBranch: 'master',
         // 默认是 false, 设置为 true 来启用
-        editLinks: true,
+        // editLinks: true,
         // 默认为 "Edit this page"
-        editLinkText: '帮助改善此页面！'
+        // editLinkText: '帮助改善此页面！'
 
     },
 
@@ -155,5 +155,15 @@ module.exports = {
             autoCreateIssue: true,//自动创建评论
 
         },
+        'vuepress-plugin-comment': {
+            choosen: 'valine',
+            // options选项中的所有参数，会传给Valine的配置
+            options: {
+                el: '#valine-vuepress-comment',
+                appId: 'OofBcGEVk91vg4oXFAPyIkwX-gzGzoHsz',
+                appKey: 'jujJShU5axIhd7x1g9qcQ88W',
+                path: '<%- frontmatter.commentid || frontmatter.permalink %>'
+            }
+        }
     },
 }
