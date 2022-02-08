@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>【译】如何释放MacBook上的磁盘空间(For:开发者) | 在路上的博客</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <script language="javascript" type="text/javascript" src="/js/pgmanor-self.js"></script>
+    <link rel="icon" href="/image/favicon.ico">
+    <script>
+        var _hmt = _hmt || [];
+            (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?64ae7cd356095ffe37f635a2b38d97c9";
+            var s = document.getElementsByTagName("script")[0]; 
+            s.parentNode.insertBefore(hm, s);
+            })();
+        </script>
+    <meta name="description" content="寻找普通人的自由之路">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
+    <link rel="preload" href="/assets/css/0.styles.653dd393.css" as="style"><link rel="preload" href="/assets/js/app.25bd28d3.js" as="script"><link rel="preload" href="/assets/js/41.97257184.js" as="script"><link rel="preload" href="/assets/js/2.f52b2b3c.js" as="script"><link rel="preload" href="/assets/js/35.798439ec.js" as="script"><link rel="prefetch" href="/assets/js/10.11042c24.js"><link rel="prefetch" href="/assets/js/11.f7dfcce2.js"><link rel="prefetch" href="/assets/js/12.51543684.js"><link rel="prefetch" href="/assets/js/13.bc21eaa0.js"><link rel="prefetch" href="/assets/js/14.b1348eac.js"><link rel="prefetch" href="/assets/js/15.ab05aca9.js"><link rel="prefetch" href="/assets/js/16.e71d09fd.js"><link rel="prefetch" href="/assets/js/17.642edada.js"><link rel="prefetch" href="/assets/js/18.07da16b4.js"><link rel="prefetch" href="/assets/js/19.f77734ce.js"><link rel="prefetch" href="/assets/js/20.3fa78d5c.js"><link rel="prefetch" href="/assets/js/21.f38a0ec4.js"><link rel="prefetch" href="/assets/js/22.e2a2f4fb.js"><link rel="prefetch" href="/assets/js/23.e99e466a.js"><link rel="prefetch" href="/assets/js/24.5c51c760.js"><link rel="prefetch" href="/assets/js/25.5197e8da.js"><link rel="prefetch" href="/assets/js/26.11058d88.js"><link rel="prefetch" href="/assets/js/27.322696be.js"><link rel="prefetch" href="/assets/js/28.953d911f.js"><link rel="prefetch" href="/assets/js/29.0309dcea.js"><link rel="prefetch" href="/assets/js/3.88adff4e.js"><link rel="prefetch" href="/assets/js/30.a459af8c.js"><link rel="prefetch" href="/assets/js/31.bc400b07.js"><link rel="prefetch" href="/assets/js/32.100f1f9b.js"><link rel="prefetch" href="/assets/js/33.561f5277.js"><link rel="prefetch" href="/assets/js/34.faabc755.js"><link rel="prefetch" href="/assets/js/36.33da635f.js"><link rel="prefetch" href="/assets/js/37.16ff3375.js"><link rel="prefetch" href="/assets/js/38.dc5ce753.js"><link rel="prefetch" href="/assets/js/39.38583c95.js"><link rel="prefetch" href="/assets/js/4.873423c6.js"><link rel="prefetch" href="/assets/js/40.9521c28e.js"><link rel="prefetch" href="/assets/js/42.3085dc98.js"><link rel="prefetch" href="/assets/js/43.3c5f78b6.js"><link rel="prefetch" href="/assets/js/44.6b076331.js"><link rel="prefetch" href="/assets/js/45.d867c131.js"><link rel="prefetch" href="/assets/js/46.82103be9.js"><link rel="prefetch" href="/assets/js/47.9528b816.js"><link rel="prefetch" href="/assets/js/48.7830ec96.js"><link rel="prefetch" href="/assets/js/49.bb805b53.js"><link rel="prefetch" href="/assets/js/5.c597efbb.js"><link rel="prefetch" href="/assets/js/50.27946a8d.js"><link rel="prefetch" href="/assets/js/51.dc21e9ff.js"><link rel="prefetch" href="/assets/js/52.573492e5.js"><link rel="prefetch" href="/assets/js/53.9182f9b1.js"><link rel="prefetch" href="/assets/js/54.1378c4b7.js"><link rel="prefetch" href="/assets/js/55.13ded052.js"><link rel="prefetch" href="/assets/js/56.f161dcba.js"><link rel="prefetch" href="/assets/js/57.30e038f3.js"><link rel="prefetch" href="/assets/js/58.d3a80123.js"><link rel="prefetch" href="/assets/js/59.6d89429b.js"><link rel="prefetch" href="/assets/js/6.bde00a3d.js"><link rel="prefetch" href="/assets/js/60.1a58b6e3.js"><link rel="prefetch" href="/assets/js/61.a50bcccb.js"><link rel="prefetch" href="/assets/js/62.9245285c.js"><link rel="prefetch" href="/assets/js/63.e5938f85.js"><link rel="prefetch" href="/assets/js/64.adeb539c.js"><link rel="prefetch" href="/assets/js/65.d29bf20f.js"><link rel="prefetch" href="/assets/js/7.e33295de.js"><link rel="prefetch" href="/assets/js/8.dfc92f84.js"><link rel="prefetch" href="/assets/js/9.0ed184de.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.653dd393.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/logo.png" alt="在路上的博客" class="logo"> <span class="site-name can-hide">在路上的博客</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="感悟" class="dropdown-title"><span class="title">感悟</span> <span class="arrow down"></span></button> <button type="button" aria-label="感悟" class="mobile-dropdown-title"><span class="title">感悟</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/meaning/find-job-value/" class="nav-link">
+  如何寻找自己的职业价值观
+</a></li><li class="dropdown-item"><!----> <a href="/meaning/code-for-life-meaning/" class="nav-link">
+  编程是赋予普通人的超能力
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术" class="dropdown-title"><span class="title">技术</span> <span class="arrow down"></span></button> <button type="button" aria-label="技术" class="mobile-dropdown-title"><span class="title">技术</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          HttpRunner V3.X
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://ontheway.cool/HttpRunner3DocsForCN/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  中文文档
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://docs.httprunner.org/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  英文文档
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li><li class="dropdown-item"><h4>
+          Android
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/skills/android/android-fluency-quality-manage/" class="nav-link">
+  流畅度评估及卡顿优化
+</a></li><li class="dropdown-subitem"><a href="/skills/android/Android-power-consumption/" class="nav-link">
+  后台耗电分析及优化
+</a></li><li class="dropdown-subitem"><a href="/skills/android/Android-https-capture/" class="nav-link">
+  https抓包指南
+</a></li></ul></li><li class="dropdown-item"><h4>
+          服务端
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/skills/server/interface-test-guide/" class="nav-link">
+  服务端接口测试指南
+</a></li><li class="dropdown-subitem"><a href="/skills/server/perf-getting-start/" class="nav-link">
+  服务端性能测试-入门指南
+</a></li><li class="dropdown-subitem"><a href="/skills/server/perf-tools/" class="nav-link">
+  服务端性能测试-工具篇
+</a></li></ul></li><li class="dropdown-item"><h4>
+          其他
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/skills/others/test-audio-video/" class="nav-link">
+  实时音视频质量评估方案
+</a></li><li class="dropdown-subitem"><a href="/skills/others/good-tools/" class="nav-link">
+  好工具推荐
+</a></li><li class="dropdown-subitem"><a href="/skills/others/clean-macBook-diskSpace/" class="nav-link">
+  如何释放MacBook上的磁盘空间
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="生活" class="dropdown-title"><span class="title">生活</span> <span class="arrow down"></span></button> <button type="button" aria-label="生活" class="mobile-dropdown-title"><span class="title">生活</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          孕产检育儿
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://ontheway.cool/pregnantBirth/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  孕产检
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="/life/Baby/" class="nav-link">
+  育婴笔记
+</a></li></ul></li><li class="dropdown-item"><h4>
+          北京房
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/life/BJHouse/" class="nav-link">
+  北京购房指南
+</a></li><li class="dropdown-subitem"><a href="/life/BJHouse/buyHouseInBeiJing/" class="nav-link">
+  2018北京购房回顾
+</a></li><li class="dropdown-subitem"><a href="/life/BJHouse/analyzeHouse/" class="nav-link">
+  目标房产对比分析
+</a></li></ul></li><li class="dropdown-item"><h4>
+          北京车
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/life/BJCar/" class="nav-link">
+  北京新能源车上牌流程
+</a></li></ul></li><li class="dropdown-item"><h4>
+          北京医
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/life/BJhospital/china-hospital-rank/" class="nav-link">
+  2019北京医院科室排名
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="财务" class="dropdown-title"><span class="title">财务</span> <span class="arrow down"></span></button> <button type="button" aria-label="财务" class="mobile-dropdown-title"><span class="title">财务</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          保险
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/" class="nav-link">
+  待更新
+</a></li></ul></li><li class="dropdown-item"><h4>
+          财务规划
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/" class="nav-link">
+  待更新
+</a></li></ul></li><li class="dropdown-item"><h4>
+          理财
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/" class="nav-link">
+  待更新
+</a></li></ul></li></ul></div></div><div class="nav-item"><a href="/travel/" class="nav-link">
+  旅行
+</a></div><div class="nav-item"><a href="/liuyan/" class="nav-link">
+  留言板
+</a></div><div class="nav-item"><a href="/about/" class="nav-link">
+  AboutMe
+</a></div> <a href="https://github.com/OnTheWay111/OnTheWay111.github.io" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="感悟" class="dropdown-title"><span class="title">感悟</span> <span class="arrow down"></span></button> <button type="button" aria-label="感悟" class="mobile-dropdown-title"><span class="title">感悟</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/meaning/find-job-value/" class="nav-link">
+  如何寻找自己的职业价值观
+</a></li><li class="dropdown-item"><!----> <a href="/meaning/code-for-life-meaning/" class="nav-link">
+  编程是赋予普通人的超能力
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术" class="dropdown-title"><span class="title">技术</span> <span class="arrow down"></span></button> <button type="button" aria-label="技术" class="mobile-dropdown-title"><span class="title">技术</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          HttpRunner V3.X
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://ontheway.cool/HttpRunner3DocsForCN/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  中文文档
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://docs.httprunner.org/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  英文文档
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li><li class="dropdown-item"><h4>
+          Android
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/skills/android/android-fluency-quality-manage/" class="nav-link">
+  流畅度评估及卡顿优化
+</a></li><li class="dropdown-subitem"><a href="/skills/android/Android-power-consumption/" class="nav-link">
+  后台耗电分析及优化
+</a></li><li class="dropdown-subitem"><a href="/skills/android/Android-https-capture/" class="nav-link">
+  https抓包指南
+</a></li></ul></li><li class="dropdown-item"><h4>
+          服务端
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/skills/server/interface-test-guide/" class="nav-link">
+  服务端接口测试指南
+</a></li><li class="dropdown-subitem"><a href="/skills/server/perf-getting-start/" class="nav-link">
+  服务端性能测试-入门指南
+</a></li><li class="dropdown-subitem"><a href="/skills/server/perf-tools/" class="nav-link">
+  服务端性能测试-工具篇
+</a></li></ul></li><li class="dropdown-item"><h4>
+          其他
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/skills/others/test-audio-video/" class="nav-link">
+  实时音视频质量评估方案
+</a></li><li class="dropdown-subitem"><a href="/skills/others/good-tools/" class="nav-link">
+  好工具推荐
+</a></li><li class="dropdown-subitem"><a href="/skills/others/clean-macBook-diskSpace/" class="nav-link">
+  如何释放MacBook上的磁盘空间
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="生活" class="dropdown-title"><span class="title">生活</span> <span class="arrow down"></span></button> <button type="button" aria-label="生活" class="mobile-dropdown-title"><span class="title">生活</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          孕产检育儿
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://ontheway.cool/pregnantBirth/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  孕产检
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="/life/Baby/" class="nav-link">
+  育婴笔记
+</a></li></ul></li><li class="dropdown-item"><h4>
+          北京房
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/life/BJHouse/" class="nav-link">
+  北京购房指南
+</a></li><li class="dropdown-subitem"><a href="/life/BJHouse/buyHouseInBeiJing/" class="nav-link">
+  2018北京购房回顾
+</a></li><li class="dropdown-subitem"><a href="/life/BJHouse/analyzeHouse/" class="nav-link">
+  目标房产对比分析
+</a></li></ul></li><li class="dropdown-item"><h4>
+          北京车
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/life/BJCar/" class="nav-link">
+  北京新能源车上牌流程
+</a></li></ul></li><li class="dropdown-item"><h4>
+          北京医
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/life/BJhospital/china-hospital-rank/" class="nav-link">
+  2019北京医院科室排名
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="财务" class="dropdown-title"><span class="title">财务</span> <span class="arrow down"></span></button> <button type="button" aria-label="财务" class="mobile-dropdown-title"><span class="title">财务</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          保险
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/" class="nav-link">
+  待更新
+</a></li></ul></li><li class="dropdown-item"><h4>
+          财务规划
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/" class="nav-link">
+  待更新
+</a></li></ul></li><li class="dropdown-item"><h4>
+          理财
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/" class="nav-link">
+  待更新
+</a></li></ul></li></ul></div></div><div class="nav-item"><a href="/travel/" class="nav-link">
+  旅行
+</a></div><div class="nav-item"><a href="/liuyan/" class="nav-link">
+  留言板
+</a></div><div class="nav-item"><a href="/about/" class="nav-link">
+  AboutMe
+</a></div> <a href="https://github.com/OnTheWay111/OnTheWay111.github.io" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Others</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/skills/others/clean-macBook-diskSpace.html" aria-current="page" class="active sidebar-link">【译】如何释放MacBook上的磁盘空间(For:开发者)</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/skills/others/clean-macBook-diskSpace.html#分析磁盘使用情况" class="sidebar-link">分析磁盘使用情况</a></li><li class="sidebar-sub-header"><a href="/skills/others/clean-macBook-diskSpace.html#删除冗余应用程序缓存" class="sidebar-link">删除冗余应用程序缓存</a></li><li class="sidebar-sub-header"><a href="/skills/others/clean-macBook-diskSpace.html#删除旧的日志文件" class="sidebar-link">删除旧的日志文件</a></li><li class="sidebar-sub-header"><a href="/skills/others/clean-macBook-diskSpace.html#减少docker使用磁盘空间" class="sidebar-link">减少Docker使用磁盘空间</a></li><li class="sidebar-sub-header"><a href="/skills/others/clean-macBook-diskSpace.html#最后" class="sidebar-link">最后</a></li></ul></li><li><a href="/skills/others/good-tools.html" class="sidebar-link">好工具推荐</a></li><li><a href="/skills/others/handle-mysql-forget-psw.html" class="sidebar-link">mysql忘记密码解决</a></li><li><a href="/skills/others/mkdocs-add-baidu-tj.html" class="sidebar-link">mkdocs添加百度统计</a></li><li><a href="/skills/others/mysql-errors.html" class="sidebar-link">mysql常见错误处理</a></li><li><a href="/skills/others/pixel-shuaji.html" class="sidebar-link">pixel刷机指南</a></li><li><a href="/skills/others/test-audio-video.html" class="sidebar-link">实时音视频质量评估方案</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><p><img src="/assets/img/img_1.51d8deaf.png" alt="img_1.png"></p> <blockquote><p>原文：<a href="https://pawelurbanek.com/macos-free-disk-space" target="_blank" rel="noopener noreferrer">How to Free Disk Space on MacBook used for Development<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p></blockquote> <p>在MacBook上 安装或更新一个应用程序有时会出奇的困难，由于磁盘空间不足。本文，我将描述几种方法，用于在MacBook上 快速、安全的清理大量存储空间。</p> <p>近来，我已在我的MacBook Pro上实操了分析和清理磁盘空间。结果，我已设法释放10GB磁盘空间，并最终升级XCode到最新版本。</p> <h2 id="分析磁盘使用情况"><a href="#分析磁盘使用情况" class="header-anchor">#</a> 分析磁盘使用情况</h2> <p>分析磁盘空间占用较多的最好方法是使用<a href="http://www.derlien.com/" target="_blank" rel="noopener noreferrer">Disk Inventory X<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> ，支持Mac OS 10.13+ (including 10.15 Catalina)</p> <p>命令行安装：</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>brew <span class="token function">install</span> --cask disk-inventory-x
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>不会命令行的朋友，<a href="http://www.derlien.com/download.php?file=DiskInventoryX" target="_blank" rel="noopener noreferrer">下载安装<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> 。</p> <p>安装后，启动台会显示：<img src="https://s3.ax1x.com/2021/01/22/sI70lF.png" alt=""></p> <p>碰到这种情况的朋友<img src="https://s3.ax1x.com/2021/01/22/sI7wSU.png" alt=""> ，系统偏好设置 -&gt; 安全性与隐私 -&gt; 通用 -&gt; 仍要打开。</p> <p>选择Macintosh HD进行分析，分析较慢，需要稍等片刻：
+<img src="https://s3.ax1x.com/2021/01/22/sI7DOJ.png" alt=""></p> <p>该应用有清晰的界面展示磁盘使用情况：
+<img src="https://s3.ax1x.com/2021/01/22/sI7sm9.png" alt=""></p> <p>下面，让我们来讨论减少磁盘使用量的小效果。</p> <h2 id="删除冗余应用程序缓存"><a href="#删除冗余应用程序缓存" class="header-anchor">#</a> 删除冗余应用程序缓存</h2> <p>在我的电脑上，大量非必要数据存放在: <code>~/Library/Caches</code>。我意识到有几百兆跟一年多没用过的Yarn有关。显然，很多应用程序都希望缓存数据，而忽略了随后的清理工作。</p> <p><img src="https://s3.ax1x.com/2021/01/22/sI7By4.png" alt=""></p> <p>你可以使用以下命令彻底清除缓存：</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token builtin class-name">cd</span> ~/Library/Caches
+<span class="token function">rm</span> -rf *
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p>或者，你也可以选择要删除缓存的文件。我已经定期清理总缓存几个月了。除了暂时的系统速度变慢之外，没发现其他任何问题。</p> <p>很显然，过段时间缓存会重新产生。但是即使经过更长时间，也不会有原来那么大。清理30多GB缓存后，使用一周电脑缓存也只增加到2GB。
+<img src="https://s3.ax1x.com/2021/01/22/sI7ywR.png" alt=""></p> <h2 id="删除旧的日志文件"><a href="#删除旧的日志文件" class="header-anchor">#</a> 删除旧的日志文件</h2> <p>我平常使用Ruby on Rails最多。使用Disk Inventory X，我发现运行本地测试会持续写log到<code>log/test.log</code>。
+<img src="https://s3.ax1x.com/2021/01/22/sI76T1.png" alt=""></p> <p>可以想象到其他应用也在以同样方式占用磁盘。Disk Inventory X对于识别和修复此类问题非常友好。</p> <h2 id="减少docker使用磁盘空间"><a href="#减少docker使用磁盘空间" class="header-anchor">#</a> 减少Docker使用磁盘空间</h2> <p><img src="https://s3.ax1x.com/2021/01/22/sI7gFx.png" alt=""></p> <p>Docker以侵占磁盘空间著名。可以通过以下命令查看Docker占用了多少磁盘空间：</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>docker system <span class="token function">df</span>
+
+TYPE            TOTAL     ACTIVE    SIZE      RECLAIMABLE
+Images          <span class="token number">17</span>        <span class="token number">4</span>         <span class="token number">2</span>.115GB   <span class="token number">1</span>.577GB <span class="token punctuation">(</span><span class="token number">74</span>%<span class="token punctuation">)</span>
+Containers      <span class="token number">6</span>         <span class="token number">1</span>         <span class="token number">138</span>.4MB   0B <span class="token punctuation">(</span><span class="token number">0</span>%<span class="token punctuation">)</span>
+Local Volumes   <span class="token number">19</span>        <span class="token number">5</span>         <span class="token number">1</span>.564GB   <span class="token number">1</span>.347GB <span class="token punctuation">(</span><span class="token number">86</span>%<span class="token punctuation">)</span>
+Build Cache     <span class="token number">0</span>         <span class="token number">0</span>         0B        0B
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><p>运行<code>docker images</code>查看哪些镜像占用空间最大:</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>docker images
+
+REPOSITORY     TAG          IMAGE ID      CREATED        SIZE
+pihole/pihole  latest       4642d275ab73  <span class="token number">4</span> months ago   296MB
+postgres       <span class="token number">11.8</span>-alpine  a7f73db0b977  <span class="token number">6</span> months ago   156MB
+postgres       <span class="token number">12.3</span>-alpine  17150f4321a3  <span class="token number">6</span> months ago   157MB
+postgres       <span class="token number">9.6</span>-alpine   45f463e53bc1  <span class="token number">6</span> months ago   <span class="token number">36</span>.1MB
+alpine         latest       a24bb4013296  <span class="token number">7</span> months ago   <span class="token number">5</span>.57MB
+postgres       <span class="token number">12.2</span>-alpine  ae192c4d3ada  <span class="token number">8</span> months ago   152MB
+postgres       <span class="token number">9.6</span>.17       529a7b20fb73  <span class="token number">8</span> months ago   200MB
+postgres       <span class="token number">11.6</span>-alpine  89ae06c2ad76  <span class="token number">11</span> months ago  152MB
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><p>在我的电脑上，我有好几个版本的postgres镜像，每个都占用大量空间。可以用以下命令移除Docker镜像：</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>docker rmi -f IMAGE_ID
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>以我的经验来看，镜像通常占用大部分磁盘空间。但是，如果您想进行更全面的清理，包括Docker容器，网络和缓存，请使用以下命令：</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>docker system prune
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>我之所以选择全面清理，是因为所有的本地Docker项目都可以轻松的用seed data创建。
+注意：在删除容器或卷之前，请确保仔细检查是否没有难以恢复的数据。</p> <p>查看<a href="https://docs.docker.com/config/pruning/" target="_blank" rel="noopener noreferrer">Docker文档<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> 以了解有关其他修剪命令的更多信息。</p> <h2 id="最后"><a href="#最后" class="header-anchor">#</a> 最后</h2> <p>希望那些建议会帮助你轻松释放大量磁盘空间。良好的做法是用Disk Inventory X定期检查是否有不必要的磁盘占用，这将有助于帮助你保持良好的磁盘使用。</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><!----> <span class="next"><a href="/skills/others/good-tools.html">
+        好工具推荐
+      </a>
+      →
+    </span></p></div>  <!----></main></div><div class="global-ui"><div></div><!----></div></div>
+    <script src="/assets/js/app.25bd28d3.js" defer></script><script src="/assets/js/41.97257184.js" defer></script><script src="/assets/js/2.f52b2b3c.js" defer></script><script src="/assets/js/35.798439ec.js" defer></script>
+  </body>
+</html>

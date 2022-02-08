@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Springboot Web开发指南 | 在路上的博客</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <script language="javascript" type="text/javascript" src="/js/pgmanor-self.js"></script>
+    <link rel="icon" href="/image/favicon.ico">
+    <script>
+        var _hmt = _hmt || [];
+            (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?64ae7cd356095ffe37f635a2b38d97c9";
+            var s = document.getElementsByTagName("script")[0]; 
+            s.parentNode.insertBefore(hm, s);
+            })();
+        </script>
+    <meta name="description" content="寻找普通人的自由之路">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
+    <link rel="preload" href="/assets/css/0.styles.653dd393.css" as="style"><link rel="preload" href="/assets/js/app.25bd28d3.js" as="script"><link rel="preload" href="/assets/js/41.97257184.js" as="script"><link rel="preload" href="/assets/js/2.f52b2b3c.js" as="script"><link rel="preload" href="/assets/js/34.faabc755.js" as="script"><link rel="prefetch" href="/assets/js/10.11042c24.js"><link rel="prefetch" href="/assets/js/11.f7dfcce2.js"><link rel="prefetch" href="/assets/js/12.51543684.js"><link rel="prefetch" href="/assets/js/13.bc21eaa0.js"><link rel="prefetch" href="/assets/js/14.b1348eac.js"><link rel="prefetch" href="/assets/js/15.ab05aca9.js"><link rel="prefetch" href="/assets/js/16.e71d09fd.js"><link rel="prefetch" href="/assets/js/17.642edada.js"><link rel="prefetch" href="/assets/js/18.07da16b4.js"><link rel="prefetch" href="/assets/js/19.f77734ce.js"><link rel="prefetch" href="/assets/js/20.3fa78d5c.js"><link rel="prefetch" href="/assets/js/21.f38a0ec4.js"><link rel="prefetch" href="/assets/js/22.e2a2f4fb.js"><link rel="prefetch" href="/assets/js/23.e99e466a.js"><link rel="prefetch" href="/assets/js/24.5c51c760.js"><link rel="prefetch" href="/assets/js/25.5197e8da.js"><link rel="prefetch" href="/assets/js/26.11058d88.js"><link rel="prefetch" href="/assets/js/27.322696be.js"><link rel="prefetch" href="/assets/js/28.953d911f.js"><link rel="prefetch" href="/assets/js/29.0309dcea.js"><link rel="prefetch" href="/assets/js/3.88adff4e.js"><link rel="prefetch" href="/assets/js/30.a459af8c.js"><link rel="prefetch" href="/assets/js/31.bc400b07.js"><link rel="prefetch" href="/assets/js/32.100f1f9b.js"><link rel="prefetch" href="/assets/js/33.561f5277.js"><link rel="prefetch" href="/assets/js/35.798439ec.js"><link rel="prefetch" href="/assets/js/36.33da635f.js"><link rel="prefetch" href="/assets/js/37.16ff3375.js"><link rel="prefetch" href="/assets/js/38.dc5ce753.js"><link rel="prefetch" href="/assets/js/39.38583c95.js"><link rel="prefetch" href="/assets/js/4.873423c6.js"><link rel="prefetch" href="/assets/js/40.9521c28e.js"><link rel="prefetch" href="/assets/js/42.3085dc98.js"><link rel="prefetch" href="/assets/js/43.3c5f78b6.js"><link rel="prefetch" href="/assets/js/44.6b076331.js"><link rel="prefetch" href="/assets/js/45.d867c131.js"><link rel="prefetch" href="/assets/js/46.82103be9.js"><link rel="prefetch" href="/assets/js/47.9528b816.js"><link rel="prefetch" href="/assets/js/48.7830ec96.js"><link rel="prefetch" href="/assets/js/49.bb805b53.js"><link rel="prefetch" href="/assets/js/5.c597efbb.js"><link rel="prefetch" href="/assets/js/50.27946a8d.js"><link rel="prefetch" href="/assets/js/51.dc21e9ff.js"><link rel="prefetch" href="/assets/js/52.573492e5.js"><link rel="prefetch" href="/assets/js/53.9182f9b1.js"><link rel="prefetch" href="/assets/js/54.1378c4b7.js"><link rel="prefetch" href="/assets/js/55.13ded052.js"><link rel="prefetch" href="/assets/js/56.f161dcba.js"><link rel="prefetch" href="/assets/js/57.30e038f3.js"><link rel="prefetch" href="/assets/js/58.d3a80123.js"><link rel="prefetch" href="/assets/js/59.6d89429b.js"><link rel="prefetch" href="/assets/js/6.bde00a3d.js"><link rel="prefetch" href="/assets/js/60.1a58b6e3.js"><link rel="prefetch" href="/assets/js/61.a50bcccb.js"><link rel="prefetch" href="/assets/js/62.9245285c.js"><link rel="prefetch" href="/assets/js/63.e5938f85.js"><link rel="prefetch" href="/assets/js/64.adeb539c.js"><link rel="prefetch" href="/assets/js/65.d29bf20f.js"><link rel="prefetch" href="/assets/js/7.e33295de.js"><link rel="prefetch" href="/assets/js/8.dfc92f84.js"><link rel="prefetch" href="/assets/js/9.0ed184de.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.653dd393.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/logo.png" alt="在路上的博客" class="logo"> <span class="site-name can-hide">在路上的博客</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="感悟" class="dropdown-title"><span class="title">感悟</span> <span class="arrow down"></span></button> <button type="button" aria-label="感悟" class="mobile-dropdown-title"><span class="title">感悟</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/meaning/find-job-value/" class="nav-link">
+  如何寻找自己的职业价值观
+</a></li><li class="dropdown-item"><!----> <a href="/meaning/code-for-life-meaning/" class="nav-link">
+  编程是赋予普通人的超能力
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术" class="dropdown-title"><span class="title">技术</span> <span class="arrow down"></span></button> <button type="button" aria-label="技术" class="mobile-dropdown-title"><span class="title">技术</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          HttpRunner V3.X
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://ontheway.cool/HttpRunner3DocsForCN/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  中文文档
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://docs.httprunner.org/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  英文文档
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li><li class="dropdown-item"><h4>
+          Android
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/skills/android/android-fluency-quality-manage/" class="nav-link">
+  流畅度评估及卡顿优化
+</a></li><li class="dropdown-subitem"><a href="/skills/android/Android-power-consumption/" class="nav-link">
+  后台耗电分析及优化
+</a></li><li class="dropdown-subitem"><a href="/skills/android/Android-https-capture/" class="nav-link">
+  https抓包指南
+</a></li></ul></li><li class="dropdown-item"><h4>
+          服务端
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/skills/server/interface-test-guide/" class="nav-link">
+  服务端接口测试指南
+</a></li><li class="dropdown-subitem"><a href="/skills/server/perf-getting-start/" class="nav-link">
+  服务端性能测试-入门指南
+</a></li><li class="dropdown-subitem"><a href="/skills/server/perf-tools/" class="nav-link">
+  服务端性能测试-工具篇
+</a></li></ul></li><li class="dropdown-item"><h4>
+          其他
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/skills/others/test-audio-video/" class="nav-link">
+  实时音视频质量评估方案
+</a></li><li class="dropdown-subitem"><a href="/skills/others/good-tools/" class="nav-link">
+  好工具推荐
+</a></li><li class="dropdown-subitem"><a href="/skills/others/clean-macBook-diskSpace/" class="nav-link">
+  如何释放MacBook上的磁盘空间
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="生活" class="dropdown-title"><span class="title">生活</span> <span class="arrow down"></span></button> <button type="button" aria-label="生活" class="mobile-dropdown-title"><span class="title">生活</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          孕产检育儿
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://ontheway.cool/pregnantBirth/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  孕产检
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="/life/Baby/" class="nav-link">
+  育婴笔记
+</a></li></ul></li><li class="dropdown-item"><h4>
+          北京房
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/life/BJHouse/" class="nav-link">
+  北京购房指南
+</a></li><li class="dropdown-subitem"><a href="/life/BJHouse/buyHouseInBeiJing/" class="nav-link">
+  2018北京购房回顾
+</a></li><li class="dropdown-subitem"><a href="/life/BJHouse/analyzeHouse/" class="nav-link">
+  目标房产对比分析
+</a></li></ul></li><li class="dropdown-item"><h4>
+          北京车
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/life/BJCar/" class="nav-link">
+  北京新能源车上牌流程
+</a></li></ul></li><li class="dropdown-item"><h4>
+          北京医
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/life/BJhospital/china-hospital-rank/" class="nav-link">
+  2019北京医院科室排名
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="财务" class="dropdown-title"><span class="title">财务</span> <span class="arrow down"></span></button> <button type="button" aria-label="财务" class="mobile-dropdown-title"><span class="title">财务</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          保险
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/" class="nav-link">
+  待更新
+</a></li></ul></li><li class="dropdown-item"><h4>
+          财务规划
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/" class="nav-link">
+  待更新
+</a></li></ul></li><li class="dropdown-item"><h4>
+          理财
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/" class="nav-link">
+  待更新
+</a></li></ul></li></ul></div></div><div class="nav-item"><a href="/travel/" class="nav-link">
+  旅行
+</a></div><div class="nav-item"><a href="/liuyan/" class="nav-link">
+  留言板
+</a></div><div class="nav-item"><a href="/about/" class="nav-link">
+  AboutMe
+</a></div> <a href="https://github.com/OnTheWay111/OnTheWay111.github.io" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="感悟" class="dropdown-title"><span class="title">感悟</span> <span class="arrow down"></span></button> <button type="button" aria-label="感悟" class="mobile-dropdown-title"><span class="title">感悟</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/meaning/find-job-value/" class="nav-link">
+  如何寻找自己的职业价值观
+</a></li><li class="dropdown-item"><!----> <a href="/meaning/code-for-life-meaning/" class="nav-link">
+  编程是赋予普通人的超能力
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术" class="dropdown-title"><span class="title">技术</span> <span class="arrow down"></span></button> <button type="button" aria-label="技术" class="mobile-dropdown-title"><span class="title">技术</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          HttpRunner V3.X
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://ontheway.cool/HttpRunner3DocsForCN/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  中文文档
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://docs.httprunner.org/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  英文文档
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li><li class="dropdown-item"><h4>
+          Android
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/skills/android/android-fluency-quality-manage/" class="nav-link">
+  流畅度评估及卡顿优化
+</a></li><li class="dropdown-subitem"><a href="/skills/android/Android-power-consumption/" class="nav-link">
+  后台耗电分析及优化
+</a></li><li class="dropdown-subitem"><a href="/skills/android/Android-https-capture/" class="nav-link">
+  https抓包指南
+</a></li></ul></li><li class="dropdown-item"><h4>
+          服务端
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/skills/server/interface-test-guide/" class="nav-link">
+  服务端接口测试指南
+</a></li><li class="dropdown-subitem"><a href="/skills/server/perf-getting-start/" class="nav-link">
+  服务端性能测试-入门指南
+</a></li><li class="dropdown-subitem"><a href="/skills/server/perf-tools/" class="nav-link">
+  服务端性能测试-工具篇
+</a></li></ul></li><li class="dropdown-item"><h4>
+          其他
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/skills/others/test-audio-video/" class="nav-link">
+  实时音视频质量评估方案
+</a></li><li class="dropdown-subitem"><a href="/skills/others/good-tools/" class="nav-link">
+  好工具推荐
+</a></li><li class="dropdown-subitem"><a href="/skills/others/clean-macBook-diskSpace/" class="nav-link">
+  如何释放MacBook上的磁盘空间
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="生活" class="dropdown-title"><span class="title">生活</span> <span class="arrow down"></span></button> <button type="button" aria-label="生活" class="mobile-dropdown-title"><span class="title">生活</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          孕产检育儿
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://ontheway.cool/pregnantBirth/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  孕产检
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="/life/Baby/" class="nav-link">
+  育婴笔记
+</a></li></ul></li><li class="dropdown-item"><h4>
+          北京房
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/life/BJHouse/" class="nav-link">
+  北京购房指南
+</a></li><li class="dropdown-subitem"><a href="/life/BJHouse/buyHouseInBeiJing/" class="nav-link">
+  2018北京购房回顾
+</a></li><li class="dropdown-subitem"><a href="/life/BJHouse/analyzeHouse/" class="nav-link">
+  目标房产对比分析
+</a></li></ul></li><li class="dropdown-item"><h4>
+          北京车
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/life/BJCar/" class="nav-link">
+  北京新能源车上牌流程
+</a></li></ul></li><li class="dropdown-item"><h4>
+          北京医
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/life/BJhospital/china-hospital-rank/" class="nav-link">
+  2019北京医院科室排名
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="财务" class="dropdown-title"><span class="title">财务</span> <span class="arrow down"></span></button> <button type="button" aria-label="财务" class="mobile-dropdown-title"><span class="title">财务</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          保险
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/" class="nav-link">
+  待更新
+</a></li></ul></li><li class="dropdown-item"><h4>
+          财务规划
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/" class="nav-link">
+  待更新
+</a></li></ul></li><li class="dropdown-item"><h4>
+          理财
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/" class="nav-link">
+  待更新
+</a></li></ul></li></ul></div></div><div class="nav-item"><a href="/travel/" class="nav-link">
+  旅行
+</a></div><div class="nav-item"><a href="/liuyan/" class="nav-link">
+  留言板
+</a></div><div class="nav-item"><a href="/about/" class="nav-link">
+  AboutMe
+</a></div> <a href="https://github.com/OnTheWay111/OnTheWay111.github.io" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Java</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/skills/java/springboot-hot-deployment-in-IDEA.html" class="sidebar-link">springboot IDEA 热部署指南</a></li><li><a href="/skills/java/springboot-web-development.html" aria-current="page" class="active sidebar-link">Springboot Web开发指南</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/skills/java/springboot-web-development.html#_1、springboot-restful" class="sidebar-link">1、Springboot+Restful</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/skills/java/springboot-web-development.html#_1-知识点" class="sidebar-link">（1）知识点</a></li><li class="sidebar-sub-header"><a href="/skills/java/springboot-web-development.html#_2-restful示例代码" class="sidebar-link">（2）restful示例代码</a></li></ul></li><li class="sidebar-sub-header"><a href="/skills/java/springboot-web-development.html#_2、mysql操作" class="sidebar-link">2、mysql操作</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/skills/java/springboot-web-development.html#_1-创建entity实体模型" class="sidebar-link">（1）创建Entity实体模型</a></li><li class="sidebar-sub-header"><a href="/skills/java/springboot-web-development.html#_2-userrepository" class="sidebar-link">（2）UserRepository</a></li><li class="sidebar-sub-header"><a href="/skills/java/springboot-web-development.html#_3-创建controller" class="sidebar-link">（3）创建controller</a></li></ul></li><li class="sidebar-sub-header"><a href="/skills/java/springboot-web-development.html#_3、kafka操作" class="sidebar-link">3、kafka操作</a></li></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><p>以开发一个Web服务为目标，来学习springboot。
+首先，Web服务的本质是对业务数据进行增删改查的逻辑处理，并通过Http API的方式开放，所以我们第一阶段只需要掌握Restful API、Mysql操作(数据库)、Redis操作、kafka操作(消息队列)即可。</p> <h2 id="_1、springboot-restful"><a href="#_1、springboot-restful" class="header-anchor">#</a> 1、Springboot+Restful</h2> <p>不了解Restful设计的同学可以先看看<a href="https://testerhome.com/topics/25806" target="_blank" rel="noopener noreferrer">RestFul Api 设计 之 URL<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> 。
+Springboot Restful Web服务搭建见：<a href="https://spring.io/guides/gs/rest-service/" target="_blank" rel="noopener noreferrer">Building a RESTful Web Service<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <blockquote><p>RESTful 的核心思想就是，客户端发出的数据操作指令都是&quot;动词 + 宾语&quot;的结构。比如，GET /articles 这个命令，GET 是动词，/articles 是宾语。
+动词通常就是五种 HTTP 方法，对应 CRUD 操作。</p> <ul><li>GET：读取（Read）</li> <li>POST：新建（Create）</li> <li>PUT：更新（Update）</li> <li>PATCH：更新（Update），通常是部分更新</li> <li>DELETE：删除（Delete） 根据 HTTP 规范，动词一律大写。</li></ul></blockquote> <h3 id="_1-知识点"><a href="#_1-知识点" class="header-anchor">#</a> （1）知识点</h3> <h4 id="a-javabean"><a href="#a-javabean" class="header-anchor">#</a> A. JavaBean</h4> <p>示例与说明: <a href="https://www.liaoxuefeng.com/wiki/1252599548343744/1260474416351680" target="_blank" rel="noopener noreferrer">廖学锋-JavaBean<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <p>JavaBean是一种符合命名规范的class，它通过getter和setter来定义属性。</p> <div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token comment">// JavaBean示例 </span>
+<span class="token keyword">class</span> <span class="token class-name">Person</span> <span class="token punctuation">{</span> 
+    <span class="token keyword">private</span> <span class="token class-name">String</span> name<span class="token punctuation">;</span> 
+    <span class="token keyword">private</span> <span class="token keyword">int</span> age<span class="token punctuation">;</span> 
+
+
+    <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+        <span class="token keyword">return</span> name<span class="token punctuation">;</span> 
+    <span class="token punctuation">}</span> 
+
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setName</span><span class="token punctuation">(</span><span class="token class-name">String</span> name<span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+        <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span> 
+    <span class="token punctuation">}</span> 
+
+
+    <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">getAge</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+        <span class="token keyword">return</span> age<span class="token punctuation">;</span> 
+    <span class="token punctuation">}</span> 
+
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setAge</span><span class="token punctuation">(</span><span class="token keyword">int</span> age<span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+        <span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">=</span> age<span class="token punctuation">;</span> 
+    <span class="token punctuation">}</span> 
+<span class="token punctuation">}</span> 
+
+<span class="token comment">// 获取javaBean属性列表 </span>
+<span class="token class-name">BeanInfo</span> info <span class="token operator">=</span> <span class="token class-name">Introspector</span><span class="token punctuation">.</span><span class="token function">getBeanInfo</span><span class="token punctuation">(</span><span class="token class-name">Person</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token class-name">PropertyDescriptor</span> pd <span class="token operator">:</span> info<span class="token punctuation">.</span><span class="token function">getPropertyDescriptors</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>pd<span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;  &quot;</span> <span class="token operator">+</span> pd<span class="token punctuation">.</span><span class="token function">getReadMethod</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;  &quot;</span> <span class="token operator">+</span> pd<span class="token punctuation">.</span><span class="token function">getWriteMethod</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+        <span class="token punctuation">}</span> 
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br></div></div><h4 id="b-restcontroller"><a href="#b-restcontroller" class="header-anchor">#</a> B. @RestController</h4> <p>该注解标识Http请求由控制器处理</p> <h4 id="c-requestmapping"><a href="#c-requestmapping" class="header-anchor">#</a> C. @RequestMapping</h4> <p>该注解确保Http请求’/greeting’被映射到getGreeting()方法</p> <div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token comment">// @GetMapping注释确保 HTTP GET 请求/greeting被映射到该greeting()方法 </span>
+<span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span>method <span class="token operator">=</span> <span class="token class-name">RequestMethod</span><span class="token punctuation">.</span>GET<span class="token punctuation">,</span> path <span class="token operator">=</span> <span class="token string">&quot;/greeting&quot;</span><span class="token punctuation">)</span> 
+<span class="token keyword">public</span> <span class="token class-name">Greeting</span> <span class="token function">getGreeting</span><span class="token punctuation">(</span><span class="token annotation punctuation">@RequestParam</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token string">&quot;name&quot;</span><span class="token punctuation">,</span> defaultValue <span class="token operator">=</span> <span class="token string">&quot;World&quot;</span><span class="token punctuation">)</span> <span class="token class-name">String</span> name<span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+    <span class="token comment">// @RequestParam将查询字符串参数的值绑定name到方法的name参数中greeting() </span>
+    <span class="token comment">// 如果name请求中没有该参数def/**/aultValue，World则使用of </span>
+    <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Greeting</span><span class="token punctuation">(</span>counter<span class="token punctuation">.</span><span class="token function">incrementAndGet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token class-name">String</span><span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span>template<span class="token punctuation">,</span> name<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+<span class="token punctuation">}</span> 
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><ul><li>name: String类型，映射名</li> <li>value: String[]，Http URIs（如&quot;/profile&quot;）</li> <li>path: String[]，Http URIs，跟value一样（value和path只能出现一个）
+<ul><li>支持 Ant 风格的路径模式（如：&quot;/profile/**&quot;）</li> <li>支持相对路径，例如 &quot;edit&quot;</li> <li>支持占位符：&quot;/${profile_path}&quot;</li></ul></li> <li>method: RequestMethod[]，支持GET, POST, HEAD, OPTIONS, PUT, PATCH, DELETE, TRACE</li> <li>params: String[]
+<ul><li>格式为&quot;myParam=myValue&quot;</li> <li>也可以使用&quot;!=&quot;运算符的否定表达式，如&quot;myParam!=myValue&quot;</li> <li>获取params：在方法中参数化引用</li></ul></li></ul> <div class="language-java line-numbers-mode"><pre class="language-java"><code>
+<span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span>
+        name <span class="token operator">=</span> <span class="token string">&quot;Get------------+++++++++++++++++&quot;</span><span class="token punctuation">,</span>
+        path <span class="token operator">=</span> <span class="token string">&quot;/get&quot;</span><span class="token punctuation">,</span>
+        params<span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">&quot;name&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;age!=300&quot;</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+        headers <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">&quot;Date&quot;</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+        method <span class="token operator">=</span> <span class="token class-name">RequestMethod</span><span class="token punctuation">.</span>GET
+<span class="token punctuation">)</span>
+<span class="token class-name">DemoBean</span> <span class="token function">get</span><span class="token punctuation">(</span><span class="token class-name">String</span> name<span class="token punctuation">,</span> <span class="token keyword">int</span> age<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>date<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span>  <span class="token keyword">new</span> <span class="token class-name">DemoBean</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> age<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br></div></div><ul><li>headers: String[]，Http请求头
+<ul><li>格式：&quot;My-Header=myValue&quot;</li> <li>也可以使用&quot;!=&quot;运算符的否定表达式，如&quot;My-Header!=myValue&quot;</li> <li>获取headers：方法参数中用@RequestHeader注解参赛</li></ul></li></ul> <div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span>
+        name <span class="token operator">=</span> <span class="token string">&quot;Get------------+++++++++++++++++&quot;</span><span class="token punctuation">,</span>
+        path <span class="token operator">=</span> <span class="token string">&quot;/get&quot;</span><span class="token punctuation">,</span>
+        params<span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">&quot;name&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;age!=300&quot;</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+        headers <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">&quot;Date&quot;</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+        method <span class="token operator">=</span> <span class="token class-name">RequestMethod</span><span class="token punctuation">.</span>GET
+<span class="token punctuation">)</span>
+<span class="token class-name">DemoBean</span> <span class="token function">get</span><span class="token punctuation">(</span><span class="token class-name">String</span> name<span class="token punctuation">,</span> <span class="token keyword">int</span> age<span class="token punctuation">,</span> <span class="token annotation punctuation">@RequestHeader</span><span class="token punctuation">(</span><span class="token string">&quot;Date&quot;</span><span class="token punctuation">)</span> <span class="token class-name">String</span> date<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>date<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span>  <span class="token keyword">new</span> <span class="token class-name">DemoBean</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> age<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><ul><li>consumes:一种或多种媒体类型组成，且必须与Content-Type的Header头匹配。</li> <li>produces: 一种或多种媒体类型组成，且必须与Accept的Header头匹配。</li></ul> <h4 id="d-requestparam"><a href="#d-requestparam" class="header-anchor">#</a> D. @RequestParam</h4> <p>用于获取GET请求中的params 或 POST请求中的body。</p> <ul><li>name：String，param的name</li> <li>value：String，name的link</li> <li>required：boolean，该param是否必须</li> <li>defaultValue：默认值</li></ul> <div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token comment">// GET代码示例，获取GET请求中的params</span>
+<span class="token comment">// Get: http://localhost:8080?name=lz&amp;age=30&amp;demoName=demolz</span>
+<span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span>
+        params<span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">&quot;name&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;age!=300&quot;</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+        method <span class="token operator">=</span> <span class="token class-name">RequestMethod</span><span class="token punctuation">.</span>GET
+<span class="token punctuation">)</span>
+<span class="token class-name">String</span> <span class="token function">get</span><span class="token punctuation">(</span><span class="token annotation punctuation">@RequestParam</span><span class="token punctuation">(</span>required <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">,</span> defaultValue <span class="token operator">=</span> <span class="token string">&quot;hhaha&quot;</span><span class="token punctuation">,</span> name <span class="token operator">=</span> <span class="token string">&quot;demoName&quot;</span><span class="token punctuation">)</span> <span class="token class-name">String</span> demoName<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> demoName<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+
+<span class="token comment">// POST代码示例，获取POST请求中的params和Body中的form-data</span>
+<span class="token comment">// Post请求： http://localhost:8080?demo=demo</span>
+<span class="token comment">// PostBody: {&quot;name&quot;: &quot;lz&quot;}</span>
+    <span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span>method <span class="token operator">=</span> <span class="token class-name">RequestMethod</span><span class="token punctuation">.</span>POST<span class="token punctuation">)</span>
+    <span class="token class-name">String</span> <span class="token function">post</span><span class="token punctuation">(</span><span class="token annotation punctuation">@RequestParam</span> <span class="token class-name">String</span> name<span class="token punctuation">,</span> <span class="token annotation punctuation">@RequestParam</span> <span class="token class-name">String</span> demo<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token class-name">String</span><span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span><span class="token string">&quot;%s, %s&quot;</span><span class="token punctuation">,</span> name<span class="token punctuation">,</span> demo<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br></div></div><h4 id="e-requestheader"><a href="#e-requestheader" class="header-anchor">#</a> E. @RequestHeader</h4> <p>用于获取http请求中的RequestHeaders。</p> <ul><li>name：String，param的name</li> <li>value：String，name的link</li> <li>required：boolean，该param是否必须</li> <li>defaultValue：默认值</li></ul> <div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token comment">// 代码示例</span>
+    <span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span>
+            path <span class="token operator">=</span> <span class="token string">&quot;/get&quot;</span><span class="token punctuation">,</span>
+            params<span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">&quot;name&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;age!=300&quot;</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+            headers <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">&quot;Date&quot;</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+            method <span class="token operator">=</span> <span class="token class-name">RequestMethod</span><span class="token punctuation">.</span>GET
+    <span class="token punctuation">)</span>
+    <span class="token class-name">String</span> <span class="token function">get</span><span class="token punctuation">(</span><span class="token annotation punctuation">@RequestHeader</span><span class="token punctuation">(</span>required <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token class-name">String</span> <span class="token class-name">Date</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token class-name">Date</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token class-name">Date</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><h4 id="f-requestbody"><a href="#f-requestbody" class="header-anchor">#</a> F. @RequestBody</h4> <p>获取POST请求 Body中的JSON格式的参数。</p> <div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token comment">// POST Body(json)示例</span>
+<span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span>method <span class="token operator">=</span> <span class="token class-name">RequestMethod</span><span class="token punctuation">.</span>POST<span class="token punctuation">)</span>
+<span class="token class-name">String</span> <span class="token function">post</span><span class="token punctuation">(</span><span class="token annotation punctuation">@RequestBody</span> <span class="token class-name">Map</span> params<span class="token punctuation">,</span> <span class="token annotation punctuation">@RequestParam</span> <span class="token class-name">String</span> demo<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token class-name">String</span><span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span><span class="token string">&quot;%s, %s&quot;</span><span class="token punctuation">,</span> params<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">&quot;name&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span> demo<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><p><img src="/assets/img/post.2477ccde.png" alt="img_1.png"></p> <h3 id="_2-restful示例代码"><a href="#_2-restful示例代码" class="header-anchor">#</a> （2）restful示例代码</h3> <p>Http请求三要素：</p> <ul><li>Path</li> <li>RequestParam</li></ul> <div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token annotation punctuation">@RestController</span>
+<span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span><span class="token string">&quot;/&quot;</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">IndexController</span> <span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span>method <span class="token operator">=</span> <span class="token class-name">RequestMethod</span><span class="token punctuation">.</span>GET<span class="token punctuation">)</span>
+    <span class="token class-name">String</span> <span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token string">&quot;Hello from get&quot;</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span>method <span class="token operator">=</span> <span class="token class-name">RequestMethod</span><span class="token punctuation">.</span>DELETE<span class="token punctuation">)</span>
+    <span class="token class-name">String</span> <span class="token function">delete</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token string">&quot;Hello from delete&quot;</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span>method <span class="token operator">=</span> <span class="token class-name">RequestMethod</span><span class="token punctuation">.</span>POST<span class="token punctuation">)</span>
+    <span class="token class-name">String</span> <span class="token function">post</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token string">&quot;Hello from post&quot;</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span>method <span class="token operator">=</span> <span class="token class-name">RequestMethod</span><span class="token punctuation">.</span>PUT<span class="token punctuation">)</span>
+    <span class="token class-name">String</span> <span class="token function">put</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token string">&quot;Hello from put&quot;</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span>method <span class="token operator">=</span> <span class="token class-name">RequestMethod</span><span class="token punctuation">.</span>PATCH<span class="token punctuation">)</span>
+    <span class="token class-name">String</span> <span class="token function">patch</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token string">&quot;Hello from patch&quot;</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br></div></div><h2 id="_2、mysql操作"><a href="#_2、mysql操作" class="header-anchor">#</a> 2、mysql操作</h2> <p>参考: <a href="https://spring.io/guides/gs/accessing-data-mysql/" target="_blank" rel="noopener noreferrer">Springboot官网: Accessing data with MySQL<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <h3 id="_1-创建entity实体模型"><a href="#_1-创建entity实体模型" class="header-anchor">#</a> （1）创建Entity实体模型</h3> <div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token comment">// Hibernate自动将实体转换为表格</span>
+<span class="token annotation punctuation">@Entity</span>  <span class="token comment">// Entity 创建实体模型</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">User</span> <span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@Id</span>
+    <span class="token annotation punctuation">@GeneratedValue</span><span class="token punctuation">(</span>strategy <span class="token operator">=</span> <span class="token class-name">GenerationType</span><span class="token punctuation">.</span>AUTO<span class="token punctuation">)</span>
+    <span class="token keyword">private</span> <span class="token class-name">Integer</span> id<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token class-name">String</span> name<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token class-name">String</span> email<span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token class-name">Integer</span> <span class="token function">getId</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> id<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setId</span><span class="token punctuation">(</span><span class="token class-name">Integer</span> id<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>id <span class="token operator">=</span> id<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> name<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setName</span><span class="token punctuation">(</span><span class="token class-name">String</span> name<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">getEmail</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> email<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setEmail</span><span class="token punctuation">(</span><span class="token class-name">String</span> email<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>email <span class="token operator">=</span> email<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br></div></div><h3 id="_2-userrepository"><a href="#_2-userrepository" class="header-anchor">#</a> （2）UserRepository</h3> <p>创建保存用户记录的存储库。</p> <div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token comment">// 示例代码</span>
+<span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">UserRepository</span> <span class="token keyword">extends</span> <span class="token class-name">CrudRepository</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">User</span><span class="token punctuation">,</span> <span class="token class-name">Integer</span><span class="token punctuation">&gt;</span></span> <span class="token punctuation">{</span>
+    <span class="token class-name">User</span> <span class="token function">findById</span><span class="token punctuation">(</span><span class="token keyword">long</span> id<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><h4 id="crudrepository"><a href="#crudrepository" class="header-anchor">#</a> CrudRepository</h4> <div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token comment">/**
+ * 对特定类型的存储库进行通用CURD操作的接口
+ */</span>
+<span class="token annotation punctuation">@NoRepositoryBean</span>
+<span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">CrudRepository</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">T</span><span class="token punctuation">,</span> ID<span class="token punctuation">&gt;</span></span> <span class="token keyword">extends</span> <span class="token class-name">Repository</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">T</span><span class="token punctuation">,</span> ID<span class="token punctuation">&gt;</span></span> <span class="token punctuation">{</span>
+
+	<span class="token comment">/**
+	 * 保存一个实体。使用返回的实例进行进一步的操作，因为保存操作可能已经完全改变了实体的实例。
+	 *
+	 * @param entity 不能为null.
+	 * @return 保存后的entity，肯定不为null
+	 * @throws IllegalArgumentException in case the given {@literal entity} is {@literal null}.
+	 */</span>
+	<span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">S</span> <span class="token keyword">extends</span> <span class="token class-name">T</span><span class="token punctuation">&gt;</span></span> <span class="token class-name">S</span> <span class="token function">save</span><span class="token punctuation">(</span><span class="token class-name">S</span> entity<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+	<span class="token comment">/**
+	 * 保存所有的entities
+	 *
+	 * @param entities不能为null，也不能包涵null
+	 * @return the saved entities; will never be {@literal null}. The returned {@literal Iterable} will have the same size
+	 *         as the {@literal Iterable} passed as an argument.
+	 * @throws IllegalArgumentException in case the given {@link Iterable entities} or one of its entities is
+	 *           {@literal null}.
+	 */</span>
+	<span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">S</span> <span class="token keyword">extends</span> <span class="token class-name">T</span><span class="token punctuation">&gt;</span></span> <span class="token class-name">Iterable</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">S</span><span class="token punctuation">&gt;</span></span> <span class="token function">saveAll</span><span class="token punctuation">(</span><span class="token class-name">Iterable</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">S</span><span class="token punctuation">&gt;</span></span> entities<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+	<span class="token comment">/**
+	 * 通过ID检索entity
+	 *
+	 * @param id must not be {@literal null}.
+	 * @return the entity with the given id or {@literal Optional#empty()} if none found.
+	 * @throws IllegalArgumentException if {@literal id} is {@literal null}.
+	 */</span>
+	<span class="token class-name">Optional</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">T</span><span class="token punctuation">&gt;</span></span> <span class="token function">findById</span><span class="token punctuation">(</span><span class="token class-name">ID</span> id<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+	<span class="token comment">/**
+	 * 通过ID检查entity是否存在.
+	 *
+	 * @param id must not be {@literal null}.
+	 * @return {@literal true} if an entity with the given id exists, {@literal false} otherwise.
+	 * @throws IllegalArgumentException if {@literal id} is {@literal null}.
+	 */</span>
+	<span class="token keyword">boolean</span> <span class="token function">existsById</span><span class="token punctuation">(</span><span class="token class-name">ID</span> id<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+	<span class="token comment">/**
+	 * 返回该类型的所有实例
+	 *
+	 * @return all entities
+	 */</span>
+	<span class="token class-name">Iterable</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">T</span><span class="token punctuation">&gt;</span></span> <span class="token function">findAll</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+	<span class="token comment">/**
+	 * Returns all instances of the type {@code T} with the given IDs.
+	 * &lt;p&gt;
+	 * If some or all ids are not found, no entities are returned for these IDs.
+	 * &lt;p&gt;
+	 * Note that the order of elements in the result is not guaranteed.
+	 *
+	 * @param ids must not be {@literal null} nor contain any {@literal null} values.
+	 * @return guaranteed to be not {@literal null}. The size can be equal or less than the number of given
+	 *         {@literal ids}.
+	 * @throws IllegalArgumentException in case the given {@link Iterable ids} or one of its items is {@literal null}.
+	 */</span>
+	<span class="token class-name">Iterable</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">T</span><span class="token punctuation">&gt;</span></span> <span class="token function">findAllById</span><span class="token punctuation">(</span><span class="token class-name">Iterable</span><span class="token generics"><span class="token punctuation">&lt;</span>ID<span class="token punctuation">&gt;</span></span> ids<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+	<span class="token comment">/**
+	 * Returns the number of entities available.
+	 *
+	 * @return the number of entities.
+	 */</span>
+	<span class="token keyword">long</span> <span class="token function">count</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+	<span class="token comment">/**
+	 * Deletes the entity with the given id.
+	 *
+	 * @param id must not be {@literal null}.
+	 * @throws IllegalArgumentException in case the given {@literal id} is {@literal null}
+	 */</span>
+	<span class="token keyword">void</span> <span class="token function">deleteById</span><span class="token punctuation">(</span><span class="token class-name">ID</span> id<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+	<span class="token comment">/**
+	 * Deletes a given entity.
+	 *
+	 * @param entity must not be {@literal null}.
+	 * @throws IllegalArgumentException in case the given entity is {@literal null}.
+	 */</span>
+	<span class="token keyword">void</span> <span class="token function">delete</span><span class="token punctuation">(</span><span class="token class-name">T</span> entity<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+	<span class="token comment">/**
+	 * Deletes all instances of the type {@code T} with the given IDs.
+	 *
+	 * @param ids must not be {@literal null}. Must not contain {@literal null} elements.
+	 * @throws IllegalArgumentException in case the given {@literal ids} or one of its elements is {@literal null}.
+	 * @since 2.5
+	 */</span>
+	<span class="token keyword">void</span> <span class="token function">deleteAllById</span><span class="token punctuation">(</span><span class="token class-name">Iterable</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token operator">?</span> <span class="token keyword">extends</span> ID<span class="token punctuation">&gt;</span></span> ids<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+	<span class="token comment">/**
+	 * Deletes the given entities.
+	 *
+	 * @param entities must not be {@literal null}. Must not contain {@literal null} elements.
+	 * @throws IllegalArgumentException in case the given {@literal entities} or one of its entities is {@literal null}.
+	 */</span>
+	<span class="token keyword">void</span> <span class="token function">deleteAll</span><span class="token punctuation">(</span><span class="token class-name">Iterable</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token operator">?</span> <span class="token keyword">extends</span> <span class="token class-name">T</span><span class="token punctuation">&gt;</span></span> entities<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+	<span class="token comment">/**
+	 * Deletes all entities managed by the repository.
+	 */</span>
+	<span class="token keyword">void</span> <span class="token function">deleteAll</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br><span class="line-number">84</span><br><span class="line-number">85</span><br><span class="line-number">86</span><br><span class="line-number">87</span><br><span class="line-number">88</span><br><span class="line-number">89</span><br><span class="line-number">90</span><br><span class="line-number">91</span><br><span class="line-number">92</span><br><span class="line-number">93</span><br><span class="line-number">94</span><br><span class="line-number">95</span><br><span class="line-number">96</span><br><span class="line-number">97</span><br><span class="line-number">98</span><br><span class="line-number">99</span><br><span class="line-number">100</span><br><span class="line-number">101</span><br><span class="line-number">102</span><br><span class="line-number">103</span><br><span class="line-number">104</span><br><span class="line-number">105</span><br><span class="line-number">106</span><br><span class="line-number">107</span><br><span class="line-number">108</span><br><span class="line-number">109</span><br><span class="line-number">110</span><br></div></div><h3 id="_3-创建controller"><a href="#_3-创建controller" class="header-anchor">#</a> （3）创建controller</h3> <div class="language-java line-numbers-mode"><pre class="language-java"><code>
+<span class="token annotation punctuation">@Controller</span>
+<span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span>path <span class="token operator">=</span> <span class="token string">&quot;/demo&quot;</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> mysqlController <span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@Autowired</span>  <span class="token comment">// 表示获取UserRepository的Bean</span>
+    <span class="token keyword">private</span> <span class="token class-name">UserRepository</span> userRepository<span class="token punctuation">;</span>
+
+    <span class="token annotation punctuation">@PostMapping</span><span class="token punctuation">(</span>path <span class="token operator">=</span> <span class="token string">&quot;/add&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> <span class="token annotation punctuation">@ResponseBody</span> <span class="token class-name">String</span> <span class="token function">addNewUser</span><span class="token punctuation">(</span><span class="token annotation punctuation">@RequestParam</span> <span class="token class-name">String</span> name<span class="token punctuation">,</span> <span class="token annotation punctuation">@RequestParam</span> <span class="token class-name">String</span> email<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// @ResponseBody表示返回的String是response</span>
+        <span class="token comment">// @RequestParam 表示Get或POST请求的request param</span>
+
+        <span class="token class-name">User</span> n <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">User</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        n<span class="token punctuation">.</span><span class="token function">setName</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        n<span class="token punctuation">.</span><span class="token function">setEmail</span><span class="token punctuation">(</span>email<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        userRepository<span class="token punctuation">.</span><span class="token function">save</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token string">&quot;saved&quot;</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token annotation punctuation">@DeleteMapping</span><span class="token punctuation">(</span>path <span class="token operator">=</span> <span class="token string">&quot;/{id}&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> <span class="token annotation punctuation">@ResponseBody</span> <span class="token class-name">String</span> <span class="token function">deleteUser</span><span class="token punctuation">(</span><span class="token annotation punctuation">@PathVariable</span><span class="token punctuation">(</span>name <span class="token operator">=</span> <span class="token string">&quot;id&quot;</span><span class="token punctuation">)</span> <span class="token class-name">Integer</span> id<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">try</span> <span class="token punctuation">{</span>
+            userRepository<span class="token punctuation">.</span><span class="token function">deleteById</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">return</span> <span class="token string">&quot;delete successfu1l&quot;</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">Exception</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> e<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token annotation punctuation">@GetMapping</span><span class="token punctuation">(</span>path <span class="token operator">=</span> <span class="token string">&quot;/all&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> <span class="token annotation punctuation">@ResponseBody</span> <span class="token class-name">Iterable</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">User</span><span class="token punctuation">&gt;</span></span> <span class="token function">getAppUsers</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> userRepository<span class="token punctuation">.</span><span class="token function">findAll</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span>
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br></div></div><h2 id="_3、kafka操作"><a href="#_3、kafka操作" class="header-anchor">#</a> 3、kafka操作</h2></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/skills/java/springboot-hot-deployment-in-IDEA.html" class="prev">
+        springboot IDEA 热部署指南
+      </a></span> <!----></p></div>  <!----></main></div><div class="global-ui"><div></div><!----></div></div>
+    <script src="/assets/js/app.25bd28d3.js" defer></script><script src="/assets/js/41.97257184.js" defer></script><script src="/assets/js/2.f52b2b3c.js" defer></script><script src="/assets/js/34.faabc755.js" defer></script>
+  </body>
+</html>

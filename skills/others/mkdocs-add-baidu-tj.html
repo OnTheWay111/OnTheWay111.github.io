@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>mkdocs添加百度统计 | 在路上的博客</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <script language="javascript" type="text/javascript" src="/js/pgmanor-self.js"></script>
+    <link rel="icon" href="/image/favicon.ico">
+    <script>
+        var _hmt = _hmt || [];
+            (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?64ae7cd356095ffe37f635a2b38d97c9";
+            var s = document.getElementsByTagName("script")[0]; 
+            s.parentNode.insertBefore(hm, s);
+            })();
+        </script>
+    <meta name="description" content="寻找普通人的自由之路">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
+    <link rel="preload" href="/assets/css/0.styles.653dd393.css" as="style"><link rel="preload" href="/assets/js/app.25bd28d3.js" as="script"><link rel="preload" href="/assets/js/41.97257184.js" as="script"><link rel="preload" href="/assets/js/2.f52b2b3c.js" as="script"><link rel="preload" href="/assets/js/22.e2a2f4fb.js" as="script"><link rel="prefetch" href="/assets/js/10.11042c24.js"><link rel="prefetch" href="/assets/js/11.f7dfcce2.js"><link rel="prefetch" href="/assets/js/12.51543684.js"><link rel="prefetch" href="/assets/js/13.bc21eaa0.js"><link rel="prefetch" href="/assets/js/14.b1348eac.js"><link rel="prefetch" href="/assets/js/15.ab05aca9.js"><link rel="prefetch" href="/assets/js/16.e71d09fd.js"><link rel="prefetch" href="/assets/js/17.642edada.js"><link rel="prefetch" href="/assets/js/18.07da16b4.js"><link rel="prefetch" href="/assets/js/19.f77734ce.js"><link rel="prefetch" href="/assets/js/20.3fa78d5c.js"><link rel="prefetch" href="/assets/js/21.f38a0ec4.js"><link rel="prefetch" href="/assets/js/23.e99e466a.js"><link rel="prefetch" href="/assets/js/24.5c51c760.js"><link rel="prefetch" href="/assets/js/25.5197e8da.js"><link rel="prefetch" href="/assets/js/26.11058d88.js"><link rel="prefetch" href="/assets/js/27.322696be.js"><link rel="prefetch" href="/assets/js/28.953d911f.js"><link rel="prefetch" href="/assets/js/29.0309dcea.js"><link rel="prefetch" href="/assets/js/3.88adff4e.js"><link rel="prefetch" href="/assets/js/30.a459af8c.js"><link rel="prefetch" href="/assets/js/31.bc400b07.js"><link rel="prefetch" href="/assets/js/32.100f1f9b.js"><link rel="prefetch" href="/assets/js/33.561f5277.js"><link rel="prefetch" href="/assets/js/34.faabc755.js"><link rel="prefetch" href="/assets/js/35.798439ec.js"><link rel="prefetch" href="/assets/js/36.33da635f.js"><link rel="prefetch" href="/assets/js/37.16ff3375.js"><link rel="prefetch" href="/assets/js/38.dc5ce753.js"><link rel="prefetch" href="/assets/js/39.38583c95.js"><link rel="prefetch" href="/assets/js/4.873423c6.js"><link rel="prefetch" href="/assets/js/40.9521c28e.js"><link rel="prefetch" href="/assets/js/42.3085dc98.js"><link rel="prefetch" href="/assets/js/43.3c5f78b6.js"><link rel="prefetch" href="/assets/js/44.6b076331.js"><link rel="prefetch" href="/assets/js/45.d867c131.js"><link rel="prefetch" href="/assets/js/46.82103be9.js"><link rel="prefetch" href="/assets/js/47.9528b816.js"><link rel="prefetch" href="/assets/js/48.7830ec96.js"><link rel="prefetch" href="/assets/js/49.bb805b53.js"><link rel="prefetch" href="/assets/js/5.c597efbb.js"><link rel="prefetch" href="/assets/js/50.27946a8d.js"><link rel="prefetch" href="/assets/js/51.dc21e9ff.js"><link rel="prefetch" href="/assets/js/52.573492e5.js"><link rel="prefetch" href="/assets/js/53.9182f9b1.js"><link rel="prefetch" href="/assets/js/54.1378c4b7.js"><link rel="prefetch" href="/assets/js/55.13ded052.js"><link rel="prefetch" href="/assets/js/56.f161dcba.js"><link rel="prefetch" href="/assets/js/57.30e038f3.js"><link rel="prefetch" href="/assets/js/58.d3a80123.js"><link rel="prefetch" href="/assets/js/59.6d89429b.js"><link rel="prefetch" href="/assets/js/6.bde00a3d.js"><link rel="prefetch" href="/assets/js/60.1a58b6e3.js"><link rel="prefetch" href="/assets/js/61.a50bcccb.js"><link rel="prefetch" href="/assets/js/62.9245285c.js"><link rel="prefetch" href="/assets/js/63.e5938f85.js"><link rel="prefetch" href="/assets/js/64.adeb539c.js"><link rel="prefetch" href="/assets/js/65.d29bf20f.js"><link rel="prefetch" href="/assets/js/7.e33295de.js"><link rel="prefetch" href="/assets/js/8.dfc92f84.js"><link rel="prefetch" href="/assets/js/9.0ed184de.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.653dd393.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/logo.png" alt="在路上的博客" class="logo"> <span class="site-name can-hide">在路上的博客</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="感悟" class="dropdown-title"><span class="title">感悟</span> <span class="arrow down"></span></button> <button type="button" aria-label="感悟" class="mobile-dropdown-title"><span class="title">感悟</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/meaning/find-job-value/" class="nav-link">
+  如何寻找自己的职业价值观
+</a></li><li class="dropdown-item"><!----> <a href="/meaning/code-for-life-meaning/" class="nav-link">
+  编程是赋予普通人的超能力
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术" class="dropdown-title"><span class="title">技术</span> <span class="arrow down"></span></button> <button type="button" aria-label="技术" class="mobile-dropdown-title"><span class="title">技术</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          HttpRunner V3.X
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://ontheway.cool/HttpRunner3DocsForCN/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  中文文档
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://docs.httprunner.org/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  英文文档
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li><li class="dropdown-item"><h4>
+          Android
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/skills/android/android-fluency-quality-manage/" class="nav-link">
+  流畅度评估及卡顿优化
+</a></li><li class="dropdown-subitem"><a href="/skills/android/Android-power-consumption/" class="nav-link">
+  后台耗电分析及优化
+</a></li><li class="dropdown-subitem"><a href="/skills/android/Android-https-capture/" class="nav-link">
+  https抓包指南
+</a></li></ul></li><li class="dropdown-item"><h4>
+          服务端
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/skills/server/interface-test-guide/" class="nav-link">
+  服务端接口测试指南
+</a></li><li class="dropdown-subitem"><a href="/skills/server/perf-getting-start/" class="nav-link">
+  服务端性能测试-入门指南
+</a></li><li class="dropdown-subitem"><a href="/skills/server/perf-tools/" class="nav-link">
+  服务端性能测试-工具篇
+</a></li></ul></li><li class="dropdown-item"><h4>
+          其他
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/skills/others/test-audio-video/" class="nav-link">
+  实时音视频质量评估方案
+</a></li><li class="dropdown-subitem"><a href="/skills/others/good-tools/" class="nav-link">
+  好工具推荐
+</a></li><li class="dropdown-subitem"><a href="/skills/others/clean-macBook-diskSpace/" class="nav-link">
+  如何释放MacBook上的磁盘空间
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="生活" class="dropdown-title"><span class="title">生活</span> <span class="arrow down"></span></button> <button type="button" aria-label="生活" class="mobile-dropdown-title"><span class="title">生活</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          孕产检育儿
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://ontheway.cool/pregnantBirth/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  孕产检
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="/life/Baby/" class="nav-link">
+  育婴笔记
+</a></li></ul></li><li class="dropdown-item"><h4>
+          北京房
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/life/BJHouse/" class="nav-link">
+  北京购房指南
+</a></li><li class="dropdown-subitem"><a href="/life/BJHouse/buyHouseInBeiJing/" class="nav-link">
+  2018北京购房回顾
+</a></li><li class="dropdown-subitem"><a href="/life/BJHouse/analyzeHouse/" class="nav-link">
+  目标房产对比分析
+</a></li></ul></li><li class="dropdown-item"><h4>
+          北京车
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/life/BJCar/" class="nav-link">
+  北京新能源车上牌流程
+</a></li></ul></li><li class="dropdown-item"><h4>
+          北京医
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/life/BJhospital/china-hospital-rank/" class="nav-link">
+  2019北京医院科室排名
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="财务" class="dropdown-title"><span class="title">财务</span> <span class="arrow down"></span></button> <button type="button" aria-label="财务" class="mobile-dropdown-title"><span class="title">财务</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          保险
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/" class="nav-link">
+  待更新
+</a></li></ul></li><li class="dropdown-item"><h4>
+          财务规划
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/" class="nav-link">
+  待更新
+</a></li></ul></li><li class="dropdown-item"><h4>
+          理财
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/" class="nav-link">
+  待更新
+</a></li></ul></li></ul></div></div><div class="nav-item"><a href="/travel/" class="nav-link">
+  旅行
+</a></div><div class="nav-item"><a href="/liuyan/" class="nav-link">
+  留言板
+</a></div><div class="nav-item"><a href="/about/" class="nav-link">
+  AboutMe
+</a></div> <a href="https://github.com/OnTheWay111/OnTheWay111.github.io" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="感悟" class="dropdown-title"><span class="title">感悟</span> <span class="arrow down"></span></button> <button type="button" aria-label="感悟" class="mobile-dropdown-title"><span class="title">感悟</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/meaning/find-job-value/" class="nav-link">
+  如何寻找自己的职业价值观
+</a></li><li class="dropdown-item"><!----> <a href="/meaning/code-for-life-meaning/" class="nav-link">
+  编程是赋予普通人的超能力
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术" class="dropdown-title"><span class="title">技术</span> <span class="arrow down"></span></button> <button type="button" aria-label="技术" class="mobile-dropdown-title"><span class="title">技术</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          HttpRunner V3.X
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://ontheway.cool/HttpRunner3DocsForCN/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  中文文档
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://docs.httprunner.org/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  英文文档
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li><li class="dropdown-item"><h4>
+          Android
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/skills/android/android-fluency-quality-manage/" class="nav-link">
+  流畅度评估及卡顿优化
+</a></li><li class="dropdown-subitem"><a href="/skills/android/Android-power-consumption/" class="nav-link">
+  后台耗电分析及优化
+</a></li><li class="dropdown-subitem"><a href="/skills/android/Android-https-capture/" class="nav-link">
+  https抓包指南
+</a></li></ul></li><li class="dropdown-item"><h4>
+          服务端
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/skills/server/interface-test-guide/" class="nav-link">
+  服务端接口测试指南
+</a></li><li class="dropdown-subitem"><a href="/skills/server/perf-getting-start/" class="nav-link">
+  服务端性能测试-入门指南
+</a></li><li class="dropdown-subitem"><a href="/skills/server/perf-tools/" class="nav-link">
+  服务端性能测试-工具篇
+</a></li></ul></li><li class="dropdown-item"><h4>
+          其他
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/skills/others/test-audio-video/" class="nav-link">
+  实时音视频质量评估方案
+</a></li><li class="dropdown-subitem"><a href="/skills/others/good-tools/" class="nav-link">
+  好工具推荐
+</a></li><li class="dropdown-subitem"><a href="/skills/others/clean-macBook-diskSpace/" class="nav-link">
+  如何释放MacBook上的磁盘空间
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="生活" class="dropdown-title"><span class="title">生活</span> <span class="arrow down"></span></button> <button type="button" aria-label="生活" class="mobile-dropdown-title"><span class="title">生活</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          孕产检育儿
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://ontheway.cool/pregnantBirth/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  孕产检
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="/life/Baby/" class="nav-link">
+  育婴笔记
+</a></li></ul></li><li class="dropdown-item"><h4>
+          北京房
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/life/BJHouse/" class="nav-link">
+  北京购房指南
+</a></li><li class="dropdown-subitem"><a href="/life/BJHouse/buyHouseInBeiJing/" class="nav-link">
+  2018北京购房回顾
+</a></li><li class="dropdown-subitem"><a href="/life/BJHouse/analyzeHouse/" class="nav-link">
+  目标房产对比分析
+</a></li></ul></li><li class="dropdown-item"><h4>
+          北京车
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/life/BJCar/" class="nav-link">
+  北京新能源车上牌流程
+</a></li></ul></li><li class="dropdown-item"><h4>
+          北京医
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/life/BJhospital/china-hospital-rank/" class="nav-link">
+  2019北京医院科室排名
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="财务" class="dropdown-title"><span class="title">财务</span> <span class="arrow down"></span></button> <button type="button" aria-label="财务" class="mobile-dropdown-title"><span class="title">财务</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          保险
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/" class="nav-link">
+  待更新
+</a></li></ul></li><li class="dropdown-item"><h4>
+          财务规划
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/" class="nav-link">
+  待更新
+</a></li></ul></li><li class="dropdown-item"><h4>
+          理财
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/" class="nav-link">
+  待更新
+</a></li></ul></li></ul></div></div><div class="nav-item"><a href="/travel/" class="nav-link">
+  旅行
+</a></div><div class="nav-item"><a href="/liuyan/" class="nav-link">
+  留言板
+</a></div><div class="nav-item"><a href="/about/" class="nav-link">
+  AboutMe
+</a></div> <a href="https://github.com/OnTheWay111/OnTheWay111.github.io" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Others</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/skills/others/clean-macBook-diskSpace.html" class="sidebar-link">【译】如何释放MacBook上的磁盘空间(For:开发者)</a></li><li><a href="/skills/others/good-tools.html" class="sidebar-link">好工具推荐</a></li><li><a href="/skills/others/handle-mysql-forget-psw.html" class="sidebar-link">mysql忘记密码解决</a></li><li><a href="/skills/others/mkdocs-add-baidu-tj.html" aria-current="page" class="active sidebar-link">mkdocs添加百度统计</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/skills/others/mkdocs-add-baidu-tj.html#_1、申请百度统计站点" class="sidebar-link">1、申请百度统计站点</a></li><li class="sidebar-sub-header"><a href="/skills/others/mkdocs-add-baidu-tj.html#_2、统计代码保存到docs-js-baidu-tongji-js中" class="sidebar-link">2、统计代码保存到docs/js/baidu-tongji.js中</a></li><li class="sidebar-sub-header"><a href="/skills/others/mkdocs-add-baidu-tj.html#_3、mkdocs-yml添加百度统计配置" class="sidebar-link">3、mkdocs.yml添加百度统计配置</a></li><li class="sidebar-sub-header"><a href="/skills/others/mkdocs-add-baidu-tj.html#_4、验证百度统计添加是否成功" class="sidebar-link">4、验证百度统计添加是否成功</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/skills/others/mkdocs-add-baidu-tj.html#_1-mkdocs启动服务" class="sidebar-link">（1）mkdocs启动服务</a></li><li class="sidebar-sub-header"><a href="/skills/others/mkdocs-add-baidu-tj.html#_2-检查统计是否生效" class="sidebar-link">（2）检查统计是否生效</a></li><li class="sidebar-sub-header"><a href="/skills/others/mkdocs-add-baidu-tj.html#_3-百度统计查看数据" class="sidebar-link">（3）百度统计查看数据</a></li></ul></li></ul></li><li><a href="/skills/others/mysql-errors.html" class="sidebar-link">mysql常见错误处理</a></li><li><a href="/skills/others/pixel-shuaji.html" class="sidebar-link">pixel刷机指南</a></li><li><a href="/skills/others/test-audio-video.html" class="sidebar-link">实时音视频质量评估方案</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><p><img src="/assets/img/img_1.fcd13f5d.png" alt="img_1.png"></p> <h2 id="_1、申请百度统计站点"><a href="#_1、申请百度统计站点" class="header-anchor">#</a> 1、申请百度统计站点</h2> <p>百度统计站点申请参考：<a href="https://tongji.baidu.com/web/help/article?id=170&amp;type=0" target="_blank" rel="noopener noreferrer">申请百度统计站点帮助<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <p>申请成功后，获取统计代码：</p> <div class="language-javascript line-numbers-mode"><pre class="language-javascript"><code><span class="token operator">&lt;</span>script<span class="token operator">&gt;</span>
+<span class="token keyword">var</span> _hmt <span class="token operator">=</span> _hmt <span class="token operator">||</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> hm <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">&quot;script&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  hm<span class="token punctuation">.</span>src <span class="token operator">=</span> <span class="token string">&quot;https://hm.baidu.com/hm.js?&lt;站点ID&gt;&quot;</span><span class="token punctuation">;</span>
+  <span class="token keyword">var</span> s <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementsByTagName</span><span class="token punctuation">(</span><span class="token string">&quot;script&quot;</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span> 
+  s<span class="token punctuation">.</span>parentNode<span class="token punctuation">.</span><span class="token function">insertBefore</span><span class="token punctuation">(</span>hm<span class="token punctuation">,</span> s<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><h2 id="_2、统计代码保存到docs-js-baidu-tongji-js中"><a href="#_2、统计代码保存到docs-js-baidu-tongji-js中" class="header-anchor">#</a> 2、统计代码保存到docs/js/baidu-tongji.js中</h2> <p>如下图所示：
+<img src="/assets/img/tongji-code.796ca463.png" alt=""></p> <h2 id="_3、mkdocs-yml添加百度统计配置"><a href="#_3、mkdocs-yml添加百度统计配置" class="header-anchor">#</a> 3、mkdocs.yml添加百度统计配置</h2> <p><img src="/assets/img/mkdocs-yml-addtj.0988d4ed.png" alt=""></p> <h2 id="_4、验证百度统计添加是否成功"><a href="#_4、验证百度统计添加是否成功" class="header-anchor">#</a> 4、验证百度统计添加是否成功</h2> <h3 id="_1-mkdocs启动服务"><a href="#_1-mkdocs启动服务" class="header-anchor">#</a> （1）mkdocs启动服务</h3> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code> mkdocs serve
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h3 id="_2-检查统计是否生效"><a href="#_2-检查统计是否生效" class="header-anchor">#</a> （2）检查统计是否生效</h3> <p>用浏览器的检查工具，查看http请求 <code>https://hm.baidu.com/hm.js</code> 是否存在并请求成功:
+如下图所示:</p> <p><img src="/assets/img/check_tj.6a9c4099.png" alt=""></p> <h3 id="_3-百度统计查看数据"><a href="#_3-百度统计查看数据" class="header-anchor">#</a> （3）百度统计查看数据</h3> <p>mkdocs安装百度统计成功后，一般20分钟之后，就可以在百度统计网站看到统计信息了。</p> <p><img src="/assets/img/tongji-data.3a0ddfb2.png" alt=""></p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/skills/others/handle-mysql-forget-psw.html" class="prev">
+        mysql忘记密码解决
+      </a></span> <span class="next"><a href="/skills/others/mysql-errors.html">
+        mysql常见错误处理
+      </a>
+      →
+    </span></p></div>  <!----></main></div><div class="global-ui"><div></div><!----></div></div>
+    <script src="/assets/js/app.25bd28d3.js" defer></script><script src="/assets/js/41.97257184.js" defer></script><script src="/assets/js/2.f52b2b3c.js" defer></script><script src="/assets/js/22.e2a2f4fb.js" defer></script>
+  </body>
+</html>

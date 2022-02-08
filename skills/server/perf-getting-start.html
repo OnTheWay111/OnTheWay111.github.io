@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>服务端性能测试入门指南 | 在路上的博客</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <script language="javascript" type="text/javascript" src="/js/pgmanor-self.js"></script>
+    <link rel="icon" href="/image/favicon.ico">
+    <script>
+        var _hmt = _hmt || [];
+            (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?64ae7cd356095ffe37f635a2b38d97c9";
+            var s = document.getElementsByTagName("script")[0]; 
+            s.parentNode.insertBefore(hm, s);
+            })();
+        </script>
+    <meta name="description" content="寻找普通人的自由之路">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
+    <link rel="preload" href="/assets/css/0.styles.653dd393.css" as="style"><link rel="preload" href="/assets/js/app.25bd28d3.js" as="script"><link rel="preload" href="/assets/js/41.97257184.js" as="script"><link rel="preload" href="/assets/js/2.f52b2b3c.js" as="script"><link rel="preload" href="/assets/js/3.88adff4e.js" as="script"><link rel="prefetch" href="/assets/js/10.11042c24.js"><link rel="prefetch" href="/assets/js/11.f7dfcce2.js"><link rel="prefetch" href="/assets/js/12.51543684.js"><link rel="prefetch" href="/assets/js/13.bc21eaa0.js"><link rel="prefetch" href="/assets/js/14.b1348eac.js"><link rel="prefetch" href="/assets/js/15.ab05aca9.js"><link rel="prefetch" href="/assets/js/16.e71d09fd.js"><link rel="prefetch" href="/assets/js/17.642edada.js"><link rel="prefetch" href="/assets/js/18.07da16b4.js"><link rel="prefetch" href="/assets/js/19.f77734ce.js"><link rel="prefetch" href="/assets/js/20.3fa78d5c.js"><link rel="prefetch" href="/assets/js/21.f38a0ec4.js"><link rel="prefetch" href="/assets/js/22.e2a2f4fb.js"><link rel="prefetch" href="/assets/js/23.e99e466a.js"><link rel="prefetch" href="/assets/js/24.5c51c760.js"><link rel="prefetch" href="/assets/js/25.5197e8da.js"><link rel="prefetch" href="/assets/js/26.11058d88.js"><link rel="prefetch" href="/assets/js/27.322696be.js"><link rel="prefetch" href="/assets/js/28.953d911f.js"><link rel="prefetch" href="/assets/js/29.0309dcea.js"><link rel="prefetch" href="/assets/js/30.a459af8c.js"><link rel="prefetch" href="/assets/js/31.bc400b07.js"><link rel="prefetch" href="/assets/js/32.100f1f9b.js"><link rel="prefetch" href="/assets/js/33.561f5277.js"><link rel="prefetch" href="/assets/js/34.faabc755.js"><link rel="prefetch" href="/assets/js/35.798439ec.js"><link rel="prefetch" href="/assets/js/36.33da635f.js"><link rel="prefetch" href="/assets/js/37.16ff3375.js"><link rel="prefetch" href="/assets/js/38.dc5ce753.js"><link rel="prefetch" href="/assets/js/39.38583c95.js"><link rel="prefetch" href="/assets/js/4.873423c6.js"><link rel="prefetch" href="/assets/js/40.9521c28e.js"><link rel="prefetch" href="/assets/js/42.3085dc98.js"><link rel="prefetch" href="/assets/js/43.3c5f78b6.js"><link rel="prefetch" href="/assets/js/44.6b076331.js"><link rel="prefetch" href="/assets/js/45.d867c131.js"><link rel="prefetch" href="/assets/js/46.82103be9.js"><link rel="prefetch" href="/assets/js/47.9528b816.js"><link rel="prefetch" href="/assets/js/48.7830ec96.js"><link rel="prefetch" href="/assets/js/49.bb805b53.js"><link rel="prefetch" href="/assets/js/5.c597efbb.js"><link rel="prefetch" href="/assets/js/50.27946a8d.js"><link rel="prefetch" href="/assets/js/51.dc21e9ff.js"><link rel="prefetch" href="/assets/js/52.573492e5.js"><link rel="prefetch" href="/assets/js/53.9182f9b1.js"><link rel="prefetch" href="/assets/js/54.1378c4b7.js"><link rel="prefetch" href="/assets/js/55.13ded052.js"><link rel="prefetch" href="/assets/js/56.f161dcba.js"><link rel="prefetch" href="/assets/js/57.30e038f3.js"><link rel="prefetch" href="/assets/js/58.d3a80123.js"><link rel="prefetch" href="/assets/js/59.6d89429b.js"><link rel="prefetch" href="/assets/js/6.bde00a3d.js"><link rel="prefetch" href="/assets/js/60.1a58b6e3.js"><link rel="prefetch" href="/assets/js/61.a50bcccb.js"><link rel="prefetch" href="/assets/js/62.9245285c.js"><link rel="prefetch" href="/assets/js/63.e5938f85.js"><link rel="prefetch" href="/assets/js/64.adeb539c.js"><link rel="prefetch" href="/assets/js/65.d29bf20f.js"><link rel="prefetch" href="/assets/js/7.e33295de.js"><link rel="prefetch" href="/assets/js/8.dfc92f84.js"><link rel="prefetch" href="/assets/js/9.0ed184de.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.653dd393.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/logo.png" alt="在路上的博客" class="logo"> <span class="site-name can-hide">在路上的博客</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="感悟" class="dropdown-title"><span class="title">感悟</span> <span class="arrow down"></span></button> <button type="button" aria-label="感悟" class="mobile-dropdown-title"><span class="title">感悟</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/meaning/find-job-value/" class="nav-link">
+  如何寻找自己的职业价值观
+</a></li><li class="dropdown-item"><!----> <a href="/meaning/code-for-life-meaning/" class="nav-link">
+  编程是赋予普通人的超能力
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术" class="dropdown-title"><span class="title">技术</span> <span class="arrow down"></span></button> <button type="button" aria-label="技术" class="mobile-dropdown-title"><span class="title">技术</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          HttpRunner V3.X
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://ontheway.cool/HttpRunner3DocsForCN/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  中文文档
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://docs.httprunner.org/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  英文文档
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li><li class="dropdown-item"><h4>
+          Android
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/skills/android/android-fluency-quality-manage/" class="nav-link">
+  流畅度评估及卡顿优化
+</a></li><li class="dropdown-subitem"><a href="/skills/android/Android-power-consumption/" class="nav-link">
+  后台耗电分析及优化
+</a></li><li class="dropdown-subitem"><a href="/skills/android/Android-https-capture/" class="nav-link">
+  https抓包指南
+</a></li></ul></li><li class="dropdown-item"><h4>
+          服务端
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/skills/server/interface-test-guide/" class="nav-link">
+  服务端接口测试指南
+</a></li><li class="dropdown-subitem"><a href="/skills/server/perf-getting-start/" class="nav-link">
+  服务端性能测试-入门指南
+</a></li><li class="dropdown-subitem"><a href="/skills/server/perf-tools/" class="nav-link">
+  服务端性能测试-工具篇
+</a></li></ul></li><li class="dropdown-item"><h4>
+          其他
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/skills/others/test-audio-video/" class="nav-link">
+  实时音视频质量评估方案
+</a></li><li class="dropdown-subitem"><a href="/skills/others/good-tools/" class="nav-link">
+  好工具推荐
+</a></li><li class="dropdown-subitem"><a href="/skills/others/clean-macBook-diskSpace/" class="nav-link">
+  如何释放MacBook上的磁盘空间
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="生活" class="dropdown-title"><span class="title">生活</span> <span class="arrow down"></span></button> <button type="button" aria-label="生活" class="mobile-dropdown-title"><span class="title">生活</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          孕产检育儿
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://ontheway.cool/pregnantBirth/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  孕产检
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="/life/Baby/" class="nav-link">
+  育婴笔记
+</a></li></ul></li><li class="dropdown-item"><h4>
+          北京房
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/life/BJHouse/" class="nav-link">
+  北京购房指南
+</a></li><li class="dropdown-subitem"><a href="/life/BJHouse/buyHouseInBeiJing/" class="nav-link">
+  2018北京购房回顾
+</a></li><li class="dropdown-subitem"><a href="/life/BJHouse/analyzeHouse/" class="nav-link">
+  目标房产对比分析
+</a></li></ul></li><li class="dropdown-item"><h4>
+          北京车
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/life/BJCar/" class="nav-link">
+  北京新能源车上牌流程
+</a></li></ul></li><li class="dropdown-item"><h4>
+          北京医
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/life/BJhospital/china-hospital-rank/" class="nav-link">
+  2019北京医院科室排名
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="财务" class="dropdown-title"><span class="title">财务</span> <span class="arrow down"></span></button> <button type="button" aria-label="财务" class="mobile-dropdown-title"><span class="title">财务</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          保险
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/" class="nav-link">
+  待更新
+</a></li></ul></li><li class="dropdown-item"><h4>
+          财务规划
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/" class="nav-link">
+  待更新
+</a></li></ul></li><li class="dropdown-item"><h4>
+          理财
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/" class="nav-link">
+  待更新
+</a></li></ul></li></ul></div></div><div class="nav-item"><a href="/travel/" class="nav-link">
+  旅行
+</a></div><div class="nav-item"><a href="/liuyan/" class="nav-link">
+  留言板
+</a></div><div class="nav-item"><a href="/about/" class="nav-link">
+  AboutMe
+</a></div> <a href="https://github.com/OnTheWay111/OnTheWay111.github.io" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="感悟" class="dropdown-title"><span class="title">感悟</span> <span class="arrow down"></span></button> <button type="button" aria-label="感悟" class="mobile-dropdown-title"><span class="title">感悟</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/meaning/find-job-value/" class="nav-link">
+  如何寻找自己的职业价值观
+</a></li><li class="dropdown-item"><!----> <a href="/meaning/code-for-life-meaning/" class="nav-link">
+  编程是赋予普通人的超能力
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术" class="dropdown-title"><span class="title">技术</span> <span class="arrow down"></span></button> <button type="button" aria-label="技术" class="mobile-dropdown-title"><span class="title">技术</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          HttpRunner V3.X
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://ontheway.cool/HttpRunner3DocsForCN/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  中文文档
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://docs.httprunner.org/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  英文文档
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li><li class="dropdown-item"><h4>
+          Android
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/skills/android/android-fluency-quality-manage/" class="nav-link">
+  流畅度评估及卡顿优化
+</a></li><li class="dropdown-subitem"><a href="/skills/android/Android-power-consumption/" class="nav-link">
+  后台耗电分析及优化
+</a></li><li class="dropdown-subitem"><a href="/skills/android/Android-https-capture/" class="nav-link">
+  https抓包指南
+</a></li></ul></li><li class="dropdown-item"><h4>
+          服务端
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/skills/server/interface-test-guide/" class="nav-link">
+  服务端接口测试指南
+</a></li><li class="dropdown-subitem"><a href="/skills/server/perf-getting-start/" class="nav-link">
+  服务端性能测试-入门指南
+</a></li><li class="dropdown-subitem"><a href="/skills/server/perf-tools/" class="nav-link">
+  服务端性能测试-工具篇
+</a></li></ul></li><li class="dropdown-item"><h4>
+          其他
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/skills/others/test-audio-video/" class="nav-link">
+  实时音视频质量评估方案
+</a></li><li class="dropdown-subitem"><a href="/skills/others/good-tools/" class="nav-link">
+  好工具推荐
+</a></li><li class="dropdown-subitem"><a href="/skills/others/clean-macBook-diskSpace/" class="nav-link">
+  如何释放MacBook上的磁盘空间
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="生活" class="dropdown-title"><span class="title">生活</span> <span class="arrow down"></span></button> <button type="button" aria-label="生活" class="mobile-dropdown-title"><span class="title">生活</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          孕产检育儿
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://ontheway.cool/pregnantBirth/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  孕产检
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="/life/Baby/" class="nav-link">
+  育婴笔记
+</a></li></ul></li><li class="dropdown-item"><h4>
+          北京房
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/life/BJHouse/" class="nav-link">
+  北京购房指南
+</a></li><li class="dropdown-subitem"><a href="/life/BJHouse/buyHouseInBeiJing/" class="nav-link">
+  2018北京购房回顾
+</a></li><li class="dropdown-subitem"><a href="/life/BJHouse/analyzeHouse/" class="nav-link">
+  目标房产对比分析
+</a></li></ul></li><li class="dropdown-item"><h4>
+          北京车
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/life/BJCar/" class="nav-link">
+  北京新能源车上牌流程
+</a></li></ul></li><li class="dropdown-item"><h4>
+          北京医
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/life/BJhospital/china-hospital-rank/" class="nav-link">
+  2019北京医院科室排名
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="财务" class="dropdown-title"><span class="title">财务</span> <span class="arrow down"></span></button> <button type="button" aria-label="财务" class="mobile-dropdown-title"><span class="title">财务</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          保险
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/" class="nav-link">
+  待更新
+</a></li></ul></li><li class="dropdown-item"><h4>
+          财务规划
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/" class="nav-link">
+  待更新
+</a></li></ul></li><li class="dropdown-item"><h4>
+          理财
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/" class="nav-link">
+  待更新
+</a></li></ul></li></ul></div></div><div class="nav-item"><a href="/travel/" class="nav-link">
+  旅行
+</a></div><div class="nav-item"><a href="/liuyan/" class="nav-link">
+  留言板
+</a></div><div class="nav-item"><a href="/about/" class="nav-link">
+  AboutMe
+</a></div> <a href="https://github.com/OnTheWay111/OnTheWay111.github.io" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Server</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/skills/server/interface-test-guide.html" class="sidebar-link">服务端接口测试指南</a></li><li><a href="/skills/server/perf-getting-start.html" aria-current="page" class="active sidebar-link">服务端性能测试入门指南</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/skills/server/perf-getting-start.html#_1、前言" class="sidebar-link">1、前言</a></li><li class="sidebar-sub-header"><a href="/skills/server/perf-getting-start.html#_2、什么是性能" class="sidebar-link">2、什么是性能</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/skills/server/perf-getting-start.html#用户眼中的性能" class="sidebar-link">用户眼中的性能</a></li><li class="sidebar-sub-header"><a href="/skills/server/perf-getting-start.html#老板眼中的性能" class="sidebar-link">老板眼中的性能</a></li><li class="sidebar-sub-header"><a href="/skills/server/perf-getting-start.html#运维眼中的性能" class="sidebar-link">运维眼中的性能</a></li><li class="sidebar-sub-header"><a href="/skills/server/perf-getting-start.html#开发眼中的性能" class="sidebar-link">开发眼中的性能</a></li><li class="sidebar-sub-header"><a href="/skills/server/perf-getting-start.html#测试眼中的性能" class="sidebar-link">测试眼中的性能</a></li></ul></li><li class="sidebar-sub-header"><a href="/skills/server/perf-getting-start.html#_3、性能的影响" class="sidebar-link">3、性能的影响</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/skills/server/perf-getting-start.html#_3-1-性能对用户的影响" class="sidebar-link">3.1 性能对用户的影响</a></li><li class="sidebar-sub-header"><a href="/skills/server/perf-getting-start.html#_3-2-性能对收入的影响" class="sidebar-link">3.2 性能对收入的影响</a></li></ul></li><li class="sidebar-sub-header"><a href="/skills/server/perf-getting-start.html#_4、性能的组成" class="sidebar-link">4、性能的组成</a></li><li class="sidebar-sub-header"><a href="/skills/server/perf-getting-start.html#_5、性能测试基础知识和注意事项" class="sidebar-link">5、性能测试基础知识和注意事项</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/skills/server/perf-getting-start.html#_5-1-性能测试目的" class="sidebar-link">5.1 性能测试目的</a></li><li class="sidebar-sub-header"><a href="/skills/server/perf-getting-start.html#_5-2-性能应该关注的指标" class="sidebar-link">5.2 性能应该关注的指标</a></li><li class="sidebar-sub-header"><a href="/skills/server/perf-getting-start.html#_5-3-性能测试类型" class="sidebar-link">5.3 性能测试类型</a></li><li class="sidebar-sub-header"><a href="/skills/server/perf-getting-start.html#_5-4-性能测试流程" class="sidebar-link">5.4 性能测试流程</a></li></ul></li><li class="sidebar-sub-header"><a href="/skills/server/perf-getting-start.html#_6、性能工具性能对比" class="sidebar-link">6、性能工具性能对比</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/skills/server/perf-getting-start.html#_6-1-性能工具对比结果" class="sidebar-link">6.1 性能工具对比结果</a></li><li class="sidebar-sub-header"><a href="/skills/server/perf-getting-start.html#_6-2-性能工具介绍" class="sidebar-link">6.2 性能工具介绍</a></li><li class="sidebar-sub-header"><a href="/skills/server/perf-getting-start.html#_6-3-测试记录" class="sidebar-link">6.3 测试记录</a></li></ul></li><li class="sidebar-sub-header"><a href="/skills/server/perf-getting-start.html#参考资料" class="sidebar-link">参考资料</a></li></ul></li><li><a href="/skills/server/perf-tools.html" class="sidebar-link">服务端性能测试-工具篇</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><p><img src="/assets/img/img_10.5e12f6cd.png" alt=""></p> <p>从14年11月到18年6月，一直专注于服务端性能测试，发现有些同学经常对一些基础概念和指标有异议，故写本文，希望对大家认识性能测试有一定帮助。也欢迎大家多多指正。</p> <blockquote><p>全文包括：</p> <ul><li>什么是性能</li> <li>性能对用户和产品收入影响</li> <li>性能测试目的、性能关注指标、性能测试类型、性能测试流程</li> <li>常用的性能测试工具对比</li></ul></blockquote> <h2 id="_1、前言"><a href="#_1、前言" class="header-anchor">#</a> 1、前言</h2> <p>随着5G时代的到来，以及万物互联时代的到来，云应用和云服务会越来越多，数据量会指数级增长。尤其是2020年全球疫情的时代意义，会导致各行各业开始上云。从而会催生出极具个性化的各类产品的诞生。</p> <p>所有行业的生态会像鲸落效应一样，围绕若干个巨无霸公司衍生出满足人们各种需求的中小型产品。大部分产品的形态可能会变成重服务端、轻客户端。</p> <p>所以，服务端性能测试的需求也有可能会出现井喷式增长。但是服务端性能测试需求对于中小型公司，尤其是大部分不关注用户体验的公司来说，性能测试需求特点是周期短、时间紧。</p> <p>因此，对于大部分测试从业人员来说，了解并掌握常见的性能测试知识是必不可少的，虽然不会经常用到。</p> <h2 id="_2、什么是性能"><a href="#_2、什么是性能" class="header-anchor">#</a> 2、什么是性能</h2> <p>不同角色关注的性能是不一样的，性能测试这项系统工程，需要各角色在其关注的纬度提供信息或帮助。</p> <h3 id="用户眼中的性能"><a href="#用户眼中的性能" class="header-anchor">#</a> 用户眼中的性能</h3> <p>性能对于用户来说，就是操作的响应速度、产品的崩溃是否影响自己的生活。比如滴滴之前在情人节当天打车服务的性能事故。
+<img src="/assets/img/img.ef9461f1.png" alt="用户眼中的性能"></p> <h3 id="老板眼中的性能"><a href="#老板眼中的性能" class="header-anchor">#</a> 老板眼中的性能</h3> <p>老板主要关心产品的收入、成本（用了多少钱服务了多少用户）、用户满意度（用户对产品是否满意）。
+<img src="/assets/img/img_1.a4d9ad9e.png" alt="老板眼中的性能"></p> <h3 id="运维眼中的性能"><a href="#运维眼中的性能" class="header-anchor">#</a> 运维眼中的性能</h3> <p><img src="/assets/img/img_2.e54fd4ed.png" alt="运维眼中的性能"></p> <h3 id="开发眼中的性能"><a href="#开发眼中的性能" class="header-anchor">#</a> 开发眼中的性能</h3> <p><img src="/assets/img/img_3.e3d7ec2d.png" alt="开发眼中的性能"></p> <h3 id="测试眼中的性能"><a href="#测试眼中的性能" class="header-anchor">#</a> 测试眼中的性能</h3> <p><img src="/assets/img/img_4.7ff4695d.png" alt="测试眼中的性能"></p> <h2 id="_3、性能的影响"><a href="#_3、性能的影响" class="header-anchor">#</a> 3、性能的影响</h2> <h3 id="_3-1-性能对用户的影响"><a href="#_3-1-性能对用户的影响" class="header-anchor">#</a> 3.1 性能对用户的影响</h3> <p>对于大部分商业公司的ToC产品，性能关乎产品命运和增长。如下图所示，虽然现在阿里京东垄断不太容易更换应用，但是遇到性能很差的时候，心里还是忍不住问候几句。
+<img src="/assets/img/img_5.a4a5cab0.png" alt="性能对用户的影响"></p> <h3 id="_3-2-性能对收入的影响"><a href="#_3-2-性能对收入的影响" class="header-anchor">#</a> 3.2 性能对收入的影响</h3> <p>大家都知道性能对产品收入有非常大的影响，但是很少公司有全面的运营分析来证明这件事。
+以下是2016全球零售业数字化性能基准报告[fr: Dynatrace]中关于性能对收入影响的数据。
+从图中可以看到，响应时间对转化率的影响非常大，比如沃尔玛够硬核了吧，沃尔玛的响应时间降低0.1秒，收入即可增加1%，是非常大的收入提升。
+<img src="/assets/img/img_6.44bd31dc.png" alt="性能对收入的影响"></p> <h2 id="_4、性能的组成"><a href="#_4、性能的组成" class="header-anchor">#</a> 4、性能的组成</h2> <p>以中小型电商网站为例，如下图所示，性能基本组成：</p> <ul><li>客户端(Web、移动端、小程序)性能</li> <li>DNS性能</li> <li>负载均衡服务性能</li> <li>Nginx集群性能、折损率</li> <li>CDN缓存性能（回源率、穿透率）</li> <li>应用服务器性能</li> <li>DB性能（Mysql/Redis/Memcache）</li></ul> <p>由此可见，中大型项目的性能测试，从来都是一项系统工程，需要非常多人跨部门合作，且持续时间长，耗费资源大。
+<img src="/assets/img/img_7.674db4e6.png" alt="性能的组成"></p> <h2 id="_5、性能测试基础知识和注意事项"><a href="#_5、性能测试基础知识和注意事项" class="header-anchor">#</a> 5、性能测试基础知识和注意事项</h2> <p>熟悉性能测试之前，首先了解性能测试的目标是什么。带着目标去思考会更有利于理解下面的内容。</p> <h3 id="_5-1-性能测试目的"><a href="#_5-1-性能测试目的" class="header-anchor">#</a> 5.1 性能测试目的</h3> <p>性能测试的最终目的是为了最大限度的满足用户的需求，通常要达成以下目标：</p> <p>（1）性能评估：测试中评估系统的QPS、响应时间、成功率等；</p> <p>（2）寻找系统瓶颈，进行系统调优；</p> <p>（3）检测软件中的问题；</p> <p>（4）验证稳定性和可靠性；</p> <h3 id="_5-2-性能应该关注的指标"><a href="#_5-2-性能应该关注的指标" class="header-anchor">#</a> 5.2 性能应该关注的指标</h3> <p>一般来说，性能测试要统一考虑这么几个因素：Thoughput吞吐量，Latency响应时间，资源利用（CPU/MEM/IO/Bandwidth…），成功率，系统稳定性。</p> <p><strong>（1）响应时间</strong>：你得定义一个系统的响应时间latency，建议是TP95或以上。响应时间具体要求多少，一般读不超过200ms，写不超过500ms。要是实在不知道，对标同行业竞品。</p> <p><strong>（2）最高吞吐量</strong>：TPS（每秒事务请求数）或QPS（每秒请求量），在目标响应时间要求下，系统可支撑的最高吞吐量。</p> <p><strong>（3）成功率</strong>：在关注QPS和响应时间的同时，还要关注成功率。如果QPS和响应时间都满足性能要求时，请求成功率只有50%，用户也是不会接收的。</p> <p><strong>（4）性能拐点</strong>：一般服务都有性能临界点。当超过临界点时，吞吐量非线性下降，响应时间指数级增加，成功率降低。</p> <p>找到出现性能拐点的主要原因：</p> <ul><li>基于性能拐点主要原因设置高危性能报警线。此为高风险注意事项，因为一旦达到性能拐点，有可能会出现雪崩现象，造成极其严重的事故。</li> <li>观察超过性能拐点后，系统是否会出现假死、崩溃等高风险事件。</li></ul> <p><strong>（5）系统稳定性</strong>：保持最高吞吐量（目标响应时间下的最高吞吐量），持续运行7*24小时。然后收集CPU，内存，硬盘/网络IO，等指标，查看系统是否稳定，比如，CPU是平稳的，内存使用也是平稳的。那么，这个值就是系统的性能。</p> <p><strong>（6）极限吞吐量</strong>：阶梯式增加并发压力，找到系统的极限值。比如：在成功率100%的情况下（不考虑响应时间的长短），系统能坚持10分钟的吞吐量。</p> <p><strong>（7）系统健壮性</strong>：做Burst Test。用第二步得到的吞吐量执行5分钟，然后在第四步得到的极限值执行1分钟，再回到第二步的吞吐量执行5钟，再到第四步的权限值执行1分钟，如此往复个一段时间，比如2天。收集系统数据：CPU、内存、硬盘/网络IO等，观察他们的曲线，以及相应的响应时间，确保系统是稳定的。</p> <p><strong>（8）低吞吐量和网络小包的测试</strong>：有时候，在低吞吐量的时候，可能会导致latency上升，比如TCP_NODELAY的参数没有开启会导致latency上升（详见TCP的那些事），而网络小包会导致带宽用不满也会导致性能上不去，所以，性能测试还需要根据实际情况有选择的测试一下这两咱场景。</p> <h3 id="_5-3-性能测试类型"><a href="#_5-3-性能测试类型" class="header-anchor">#</a> 5.3 性能测试类型</h3> <p>首先简单分析性能测试的压力模型。
+如下图所示，随着单位时间压力的不断增长，被测系统和服务器的压力不断增加，TPS会因为这些因素而发生变化，而且通常符合一下规律。</p> <p><img src="/assets/img/img_8.bc7e1a9d.png" alt="TPS变化"> <img src="/assets/img/img_9.0841f47b.png" alt="响应时间变化"></p> <p>为得到性能关注的指标，基本分为以下性能测试类型：
+<strong>性能测试（狭义）</strong></p> <p>说明：性能测试方法是通过模拟生产运行的业务压力量和使用场景组合，测试系统的性能是否满足生产性能要求。通俗地说，这种方法就是要在特定的运行条件下验证系统的能力状态。</p> <p>特点： 1、这种方法的主要目的是验证系统是否有系统宣称具有的能力。 2、这种方法要事先了解被测试系统经典场景，并具有确定的性能目标。 3、这种方法要求在已经确定的环境下运行。 也就是说，这种方法是对系统性能已经有了解的前提，并对需求有明确的目标，并在已经确定的环境下进行的。</p> <p><strong>负载测试(Load Test)</strong></p> <p>说明：通过在被测系统上不断加压，直到性能指标达到极限（例如“响应时间”）超过预定指标或都某种资源已经达到饱和状态。</p> <p>特点： 1、这种性能测试方法的主要目的是找到系统处理能力的极限。 2、这种性能测试方法需要在给定的测试环境下进行，通常也需要考虑被测试系统的业务压力量和典型场景、使得测试结果具有业务上的意义。 3、这种性能测试方法一般用来了解系统的性能容量，或是配合性能调优来使用。 也就是说，这种方法是对一个系统持续不段的加压，看你在什么时候已经超出“我的要求”或系统崩溃。</p> <p><strong>压力测试（强度测试）(Stress Test)</strong></p> <p>说明：压力测试方法测试系统在一定饱和状态下，例如cpu、内存在饱和使用情况下，系统能够处理的会话能力，以及系统是否会出现错误</p> <p>特点： 1、这种性能测试方法的主要目的是检查系统处于压力性能下时应用的表现。 2、这种性能测试一般通过模拟负载等方法，使得系统的资源使用达到较高的水平。 3、这种性能测试方法一般用于测试系统的稳定性。 也就是说，这种测试是让系统处在很大强度的压力之下，看系统是否稳定，哪里会出问题。</p> <p><strong>并发测试（Concurrency Testing）</strong></p> <p>说明：并发测试方法通过模拟用户并发访问，测试多用户并发访问同一个应用、同一个模块或者数据记录时是否存在死锁或其者他性能问题。</p> <p>特点： 1、这种性能测试方法的主要目的是发现系统中可能隐藏的并发访问时的问题。 2、这种性能测试方法主要关注系统可能存在的并发问题，例如系统中的内存泄漏、线程锁和资源争用方面的问题。 3、这种性能测试方法可以在开发的各个阶段使用需要相关的测试工具的配合和支持。 也就是说，这种测试关注点是多个用户同时（并发）对一个模块或操作进行加压。</p> <p><strong>配置测试（Configuration Testing）</strong></p> <p>说明：配置测试方法通过对被测系统的软\硬件环境的调整，了解各种不同对系统的性能影响的程度，从而找到系统各项资源的最优分配原则。</p> <p>特点： 1、这种性能测试方法的主要目的是了解各种不同因素对系统性能影响的程度，从而判断出最值得进行的调优操作。 2、这种性能测试方法一般在对系统性能状况有初步了解后进行。 3、这种性能测试方法一般用于性能调优和规划能力。 也就是说，这种测试关注点是“微调”，通过对软硬件的不段调整，找出这他们的最佳状态，使系统达到一个最强的状态。</p> <p><strong>可靠性测试</strong></p> <p>说明：通过给系统加载一定业务压力（例如资源在70%-90%的使用率），使系统运行一段时间，以此检测系统是否稳定运行。</p> <p>特点： 1、这种性能测试方法的主要目的是验证是否支持长期稳定的运行。 2、这种性能测试方法需要在压力下持续一段时间的运行。（2~3天） 3、测试过程中需要关注系统的运行状况。 如果测试过程中发现，随着时间的推移，响应时间有明显的变化，或是系统资源使用率有明显波动，都可能是系统不稳定的征兆。 也就是说，这种测试的关注点是“稳定”，不需要给系统太大的压力，只要系统能够长期处于一个稳定的状态。</p> <p><strong>失效恢复测试</strong></p> <p>说明：如果系统局部发生故障，用户是否能够继续使用系统，以及如果这种情况发生，用户将受到多大程度的影响。</p> <p>特点： 1.这种性能测试方法的主要目的是验证在局部故障情况下，系统能否继续使用。 2.这种性能测试方法还需要指出，当问题发生时，“能支持多少用户访问”的结论和“采取何种应急措施”的方案。 3.一般来说，只有对系统持续运行指标有明确要求的系统才需要进行这种类型的测试。</p> <p><strong>大数据量测试</strong>：针对某些系统存储、传输、统计查询等业务进行大数据量的测试。</p> <p><strong>注意</strong>：在做性能测试时请忘掉分类。例如，运行8个小时来测试系统是否可靠，而这个测试极有可能包含了可靠性能测、强度测试、并发测试、负载测试，等等。因此，在实施性能测试时决不能割裂它们的内部联系去进行，而应该基于测试目标，分析它们之间的关系，以一种高效率的方式来设计性能测试。</p> <h3 id="_5-4-性能测试流程"><a href="#_5-4-性能测试流程" class="header-anchor">#</a> 5.4 性能测试流程</h3> <p><img src="/assets/img/img_10.5e12f6cd.png" alt="性能测试流程"></p> <h4 id="_1-性能需求分析"><a href="#_1-性能需求分析" class="header-anchor">#</a> （1）性能需求分析</h4> <p>性能需求分析是整个性能测试工作开展的基础，如果连性能的需求都没弄清楚，后面的性能测试工具以及执行就无从谈起了。</p> <p>在这一阶段，性能测试人员需要与PM、DEV及项目相关的人员进行沟通，同时收集各种项目资料，对系统进行分析，确认测试的目标。并将其转化为可衡量的具体性能指标。</p> <p>测试需求分析阶段的主要任务是分析被测系统及其性能需求，建立性能测试数据模型，分析性能需求，确定合理性能目标，并进行评审；</p> <h4 id="_2-性能测试准备"><a href="#_2-性能测试准备" class="header-anchor">#</a> （2）性能测试准备</h4> <p><strong>主要包括</strong>：设计场景，根据场景编写程序、编写脚本、准备测试环境，构造测试数据，环境预调优等；</p> <p><strong>设计场景</strong>：针对系统的特点设计出合理的测试场景。为了让测试结果更加准确，这里需要很细致的工作。如建立用户模型，只有知道真实的用户是如何对系统产生压力，才可以设计出有代表性的压力测试场景。这就涉及到很多信息，如用户群的分布、各类型用户用到的功能、用户的使用习惯、工作时间段、系统各模块压力分布等等。只有从多方面不断的积累这种数据，才会让压力场景更有意义。最后将设计场景转换成具体的用例。</p> <p><strong>测试数据</strong>：测试数据的设计也是一个重点且容易出问题的地方。生成测试数据量达到未来预期数量只是最基础的一步，更需要考虑的是数据的分布是否合理，需要仔细的确认程序中使用到的各种查询条件，这些重点列的数值要尽可能的模拟真实的数据分布， 否则测试的结果可能是无效的。测试数据最好使用线上脱敏后的数据，尽可能接近真实用户行为。</p> <p><strong>预调优</strong>：指根据系统的特点和团队的经验，提前对系统的各个方面做一些优化调整，避免测试执行过程中的无谓返工。比如一个高并发的系统，10000人在线，连接池和线程池的配置还用默认的，显然是会测出问题的。</p> <h4 id="_3-执行性能测试"><a href="#_3-执行性能测试" class="header-anchor">#</a> （3）执行性能测试</h4> <p>执行阶段工作主要包含两个方面的内容：一是执行测试用例模型，包括执行脚本和场景；其次测试过程监控，包括测试结果、记录性能指标和性能计数器的值</p> <h4 id="_4-结果分析与性能调优"><a href="#_4-结果分析与性能调优" class="header-anchor">#</a> （4）结果分析与性能调优</h4> <p>发现问题或者性能指标达不到预期，及时的分析定位，处理后重复测试过程。</p> <p>性能问题通常是相互关联相互影响的，表面上看到的现象很可能不是根本问题，而是另一处出现问题后引起的反应。这就要求监控收集数据时要全面，从多方面多个角度去判断定位。调优的过程其实也是一种平衡的过程，在系统的多个方面达到一个平衡即可。</p> <h4 id="_5-性能报告与总结"><a href="#_5-性能报告与总结" class="header-anchor">#</a> （5）性能报告与总结</h4> <p>编写性能测试报告，阐明性能测试目标、性能结果、测试环境、数据构造规则、遇到的问题和解决办法等。并对此次性能测试经验进行总结与沉淀。具体性能测试报告的编写可以参考《性能测试报告模板》。</p> <p>上面所有内容中，如果排除技术上的问题，性能测试中最难做好的，就是用户模型的分析。它直接决定了压力测试场景是否能够有效的模拟真实世界压力，而正是这种对真实压力的模拟，才使性能测试有了更大的意义。可以说，性能测试做到一定程度，差距就体现在了模型建立上。</p> <p>至于性能问题的分析、定位或者调优，很大程度是一种技术问题，需要多方面的专业知识。数据库、操作系统、网络、开发都是一个合格的性能测试人员需要拥有的技能，只有这样，才能从多角度全方位的去考虑分析问题。</p> <h2 id="_6、性能工具性能对比"><a href="#_6、性能工具性能对比" class="header-anchor">#</a> 6、性能工具性能对比</h2> <p>基于目前市场上主流的性能工具，进行横向对比测试，以帮助我们在不同的环境灵活选择不同的测试工具。</p> <h3 id="_6-1-性能工具对比结果"><a href="#_6-1-性能工具对比结果" class="header-anchor">#</a> 6.1 性能工具对比结果</h3> <p>测试对象：Nginx index.html(612Byte)，CPU:16核 / 内存:16GB / 磁盘:500GB
+压力机：Ubuntu18.04, CPU: 8核 / 内存：8G / 磁盘: 500GB
+<img src="/assets/img/img_11.c36fc64c.png" alt="性能工具对比结果"></p> <p>在此只进行了最基础的性能对比测试，仅供基本的工具选择判断。</p> <h3 id="_6-2-性能工具介绍"><a href="#_6-2-性能工具介绍" class="header-anchor">#</a> 6.2 性能工具介绍</h3> <h4 id="_1-wrk-wrk2"><a href="#_1-wrk-wrk2" class="header-anchor">#</a> （1）wrk / wrk2</h4> <p>wrk 是一款针对 Http 协议的基准测试工具，它能够在单机多核 CPU 的条件下，使用系统自带的高性能 I/O 机制，如 epoll，kqueue 等，通过多线程和事件模式，对目标机器产生大量的负载。</p> <blockquote><p>PS: 其实，wrk 是复用了 redis 的 ae 异步事件驱动框架，准确来说 ae 事件驱动框架并不是 redis 发明的, 它来至于 Tcl 的解释器 jim, 这个小巧高效的框架, 因为被 redis 采用而被大家所熟知。</p></blockquote> <h5 id="优势"><a href="#优势" class="header-anchor">#</a> 优势：</h5> <ul><li>轻量级性能测试工具;</li> <li>安装简单（相对 Apache ab 来说）;</li> <li>学习曲线基本为零，几分钟就能学会咋用了；</li> <li>基于系统自带的高性能 I/O 机制，如 epoll, kqueue, 利用异步的事件驱动框架，通过很少的线程就可以压出很大的并发量；</li></ul> <h5 id="劣势"><a href="#劣势" class="header-anchor">#</a> 劣势：</h5> <p>wrk 目前仅支持单机压测，后续也不太可能支持多机器对目标机压测，因为它本身的定位，并不是用来取代 JMeter, LoadRunner 等专业的测试工具，wrk 提供的功能，对后端开发人员来说，应付日常接口性能验证还是比较友好的。</p> <p>之前在乐视我们的测试架构师基于wrk2主导开发并支持了分布式，开发成本还是略高的。</p> <h5 id="基础使用"><a href="#基础使用" class="header-anchor">#</a> 基础使用：</h5> <p>子命令参数说明：</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>使用方法: wrk <span class="token operator">&lt;</span>选项<span class="token operator">&gt;</span> <span class="token operator">&lt;</span>被测HTTP服务的URL<span class="token operator">&gt;</span>                            
+  Options:                                            
+    -c, --connections   跟服务器建立并保持的TCP连接数量  
+    -d, --duration      压测时间           
+    -t, --threads       使用多少个线程进行压测（为了减少现成的上下文切换，官方建议thread数量等同CPU核数）                
+    -s, --script        指定Lua脚本路径
+    -H, --header      <span class="token operator">&lt;</span>H<span class="token operator">&gt;</span>  为每一个HTTP请求添加HTTP头
+        --latency          在压测结束后，打印延迟统计信息   
+        --timeout     <span class="token operator">&lt;</span>T<span class="token operator">&gt;</span>  超时时间     
+    -v, --version          打印正在使用的wrk的详细版本信息
+                                                      
+  <span class="token operator">&lt;</span>N<span class="token operator">&gt;</span>代表数字参数，支持国际单位 <span class="token punctuation">(</span>1k, 1M, 1G<span class="token punctuation">)</span>
+  <span class="token operator">&lt;</span>T<span class="token operator">&gt;</span>代表时间参数，支持时间单位 <span class="token punctuation">(</span>2s, 2m, 2h<span class="token punctuation">)</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br></div></div><p>PS: 关于线程数，并不是设置的越大，压测效果越好，线程设置过大，反而会导致线程切换过于频繁，效果降低，一般来说，推荐设置成压测机器 CPU 核心数的 2 倍到 4 倍就行了。</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token comment">## 示例</span>
+wrk -c400 -t24 -d30s --latency http://10.60.82.91/
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p>报告解析：</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>Running 30s <span class="token builtin class-name">test</span> @ http://www.baidu.com （压测时间30s）
+  <span class="token number">12</span> threads and <span class="token number">400</span> connections （共12个测试线程，400个连接）
+                          （平均值） （标准差）  （最大值）（正负一个标准差所占比例）
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    （延迟）
+    Latency   <span class="token number">386</span>.32ms  <span class="token number">380</span>.75ms   <span class="token number">2</span>.00s    <span class="token number">86.66</span>%
+    <span class="token punctuation">(</span>每秒请求数<span class="token punctuation">)</span>
+    Req/Sec    <span class="token number">17.06</span>     <span class="token number">13.91</span>   <span class="token number">252.00</span>     <span class="token number">87.89</span>%
+  Latency Distribution （延迟分布）
+     <span class="token number">50</span>%  <span class="token number">218</span>.31ms
+     <span class="token number">75</span>%  <span class="token number">520</span>.60ms
+     <span class="token number">90</span>%  <span class="token number">955</span>.08ms
+     <span class="token number">99</span>%    <span class="token number">1</span>.93s 
+  <span class="token number">4922</span> requests <span class="token keyword">in</span> <span class="token number">30</span>.06s, <span class="token number">73</span>.86MB <span class="token builtin class-name">read</span> <span class="token punctuation">(</span><span class="token number">30</span>.06s内处理了4922个请求，耗费流量73.86MB<span class="token punctuation">)</span>
+  Socket errors: connect <span class="token number">0</span>, <span class="token builtin class-name">read</span> <span class="token number">0</span>, <span class="token function">write</span> <span class="token number">0</span>, <span class="token function">timeout</span> <span class="token number">311</span> <span class="token punctuation">(</span>发生错误数<span class="token punctuation">)</span>
+Requests/sec:    <span class="token number">163.76</span> <span class="token punctuation">(</span>QPS <span class="token number">163.76</span>,即平均每秒处理请求数为163.76<span class="token punctuation">)</span>
+Transfer/sec:      <span class="token number">2</span>.46MB <span class="token punctuation">(</span>平均每秒流量2.46MB<span class="token punctuation">)</span>
+
+
+Running 30s <span class="token builtin class-name">test</span> @ http://10.60.82.91/ （压测时间30s）
+  <span class="token number">32</span> threads and <span class="token number">400</span> connections （共32个测试线程，400个连接）
+              （平均值） （标准差）  （最大值）（正负一个标准差所占比例）
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+  Latency<span class="token punctuation">(</span>延迟<span class="token punctuation">)</span>  <span class="token number">10</span>.31ms   <span class="token number">40</span>.13ms <span class="token number">690</span>.32ms   <span class="token number">98.33</span>%
+  Req/Sec<span class="token punctuation">(</span>每秒请求数<span class="token punctuation">)</span> <span class="token number">2</span>.14k   <span class="token number">482.15</span>     <span class="token number">6</span>.36k    <span class="token number">77.39</span>%
+  Latency Distribution
+     <span class="token number">50</span>%    <span class="token number">5</span>.11ms
+     <span class="token number">75</span>%    <span class="token number">7</span>.00ms
+     <span class="token number">90</span>%    <span class="token number">9</span>.65ms
+     <span class="token number">99</span>%  <span class="token number">212</span>.68ms
+  
+  <span class="token punctuation">(</span><span class="token number">30</span>.10s内处理了2022092个请求，耗费流量1.62GB<span class="token punctuation">)</span>
+  <span class="token number">2022092</span> requests <span class="token keyword">in</span> <span class="token number">30</span>.10s, <span class="token number">1</span>.62GB <span class="token builtin class-name">read</span>
+Requests/sec:  <span class="token number">67183.02</span>  <span class="token punctuation">(</span>QPS <span class="token number">67183.02</span>,即平均每秒处理请求数为67183.02<span class="token punctuation">)</span>
+Transfer/sec:     <span class="token number">55</span>.03MB <span class="token punctuation">(</span>平均每秒流量55.03MB<span class="token punctuation">)</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br></div></div><h4 id="_2-jmeter"><a href="#_2-jmeter" class="header-anchor">#</a> （2）Jmeter</h4> <p>Jmeter是Java开发的、基于多线程并发模型的压测工具，也是目前最流行的开源压测工具，工作原理类似，如下图：
+<img src="/assets/img/img_12.09e75978.png" alt="jmeter"></p> <ul><li>其所谓的虚拟用户(vuser)就是对应一个线程</li> <li>在单个线程中，每个请求（query）都是同步调用的，下一个请求要等待前一个请求完成才能进行</li> <li>一个请求（query）分成三部分：
+<ul><li>send - 施压端发送开始，直到承压端接收完成</li> <li>wait - 承压端接收完成开始，直至业务处理结束</li> <li>recv - 承压端返回数据，直至施压端接收完成</li></ul></li> <li>同一线程中连续的两个请求之间存在等待时间这种概念，即图中的空白处</li></ul> <p><strong>在多线程并发模型下，是不是可以通过不断增加线程数量生产出更大的压力？</strong></p> <p>答案是否定的。</p> <p>事实上一个进程在一个时间点只能执行一个线程，而所谓的并发是指在进程里不断切换线程实现了看上去的多个任务的并发，但是线程上下文切换有很高的成本，过多的线程数反而会造成性能的严重下滑。
+<img src="/assets/img/img_13.1919f8a6.png" alt="IO阻塞模型">
+从应用角度来看，基于多线程的并发模型，往往需要设置最大并发数参数，而如果压测场景需要不断往上加压，那这类工具其实挺难应付的。</p> <h4 id="_3-locust"><a href="#_3-locust" class="header-anchor">#</a> （3）Locust</h4> <p>Locust是用Python开发的分布式压测工具，近年来在国内比较流行。Locust并不是基于Python的多线程，而是coroutine（协程，gevent提供），gevent使用了libev或者 libuv作为eventloop。</p> <h5 id="locust响应时间失真问题"><a href="#locust响应时间失真问题" class="header-anchor">#</a> Locust响应时间失真问题：</h5> <p>Locust当压力机CPU达到瓶颈后，响应时间会严重失真。</p> <p>比如当Locust normal模式下，8进程，CPU瓶颈后，90%响应时间为340ms。同时wrk获取的响应时间为59.41ms.
+<img src="/assets/img/img_14.49c076ac.png" alt=""> <img src="/assets/img/img_15.6d31fa8c.png" alt=""></p> <h5 id="基本使用介绍"><a href="#基本使用介绍" class="header-anchor">#</a> 基本使用介绍：</h5> <p>装饰器task可以设置压力比例</p> <ul><li>HttpUser示例</li></ul> <div class="language-python line-numbers-mode"><pre class="language-python"><code><span class="token keyword">from</span> locust <span class="token keyword">import</span> HttpUser<span class="token punctuation">,</span> task
+
+<span class="token keyword">class</span> <span class="token class-name">QuickstartUser</span><span class="token punctuation">(</span>HttpUser<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment">## task为每个正在运行的用户创建一个greenlet(微线程)</span>
+    <span class="token decorator annotation punctuation">@task</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+    <span class="token keyword">def</span> <span class="token function">detail</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>client<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">&quot;http://10.60.82.91/&quot;</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">on_start</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">pass</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><ul><li>FastHttpUser示例</li></ul> <div class="language-python line-numbers-mode"><pre class="language-python"><code><span class="token keyword">from</span> locust <span class="token keyword">import</span> task
+<span class="token keyword">from</span> locust<span class="token punctuation">.</span>contrib<span class="token punctuation">.</span>fasthttp <span class="token keyword">import</span> FastHttpUser
+
+<span class="token keyword">class</span> <span class="token class-name">QuickstartUser</span><span class="token punctuation">(</span>FastHttpUser<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment">## task为每个正在运行的用户创建一个greenlet(微线程)</span>
+    <span class="token decorator annotation punctuation">@task</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+    <span class="token keyword">def</span> <span class="token function">detail</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>client<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">&quot;http://10.60.82.91/&quot;</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">on_start</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">pass</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><ul><li>启动及分布式</li></ul> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>
+<span class="token comment">## -c 并发用户数</span>
+<span class="token comment">## -r 每秒启动用户数</span>
+<span class="token comment">## -t 持续运行时间</span>
+locust -f load_test.py --host<span class="token operator">=</span>http://10.60.82.91 --no-web -c <span class="token number">10</span> -r <span class="token number">10</span> -t 1m
+
+<span class="token comment">## 分布式</span>
+<span class="token function">nohup</span> locust -f locust_files/fast_http_user.py --master <span class="token operator">&amp;</span>
+<span class="token function">nohup</span> locust -f locust_files/fast_http_user.py --worker --master-host<span class="token operator">=</span><span class="token number">10.60</span>.82.90 <span class="token operator">&amp;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><h3 id="_6-3-测试记录"><a href="#_6-3-测试记录" class="header-anchor">#</a> 6.3 测试记录</h3> <h4 id="_1-wrk测试记录"><a href="#_1-wrk测试记录" class="header-anchor">#</a> （1）wrk测试记录</h4> <h5 id="_2线程-c1000-t1-因最少2线程-qps-35560-79"><a href="#_2线程-c1000-t1-因最少2线程-qps-35560-79" class="header-anchor">#</a> 2线程： -c1000 -t1（因最少2线程） QPS: 35560.79</h5> <p>wrk -c1000 -t1 -d30s --latency http://10.60.82.91/
+<img src="/assets/img/img_16.18b16210.png" alt=""></p> <h5 id="_3线程-c1000-t2-qps-66941-77"><a href="#_3线程-c1000-t2-qps-66941-77" class="header-anchor">#</a> 3线程：（ -c1000 -t2  QPS: 66941.77 ）</h5> <p>wrk -c1000 -t2 -d30s --latency http://10.60.82.91/
+<img src="/assets/img/img_17.be17493f.png" alt=""></p> <h4 id="_8线程-c1000-t8-qps-75579-30"><a href="#_8线程-c1000-t8-qps-75579-30" class="header-anchor">#</a> 8线程: ( -c1000 -t8  QPS: 75579.30 ）</h4> <p>wrk -c1000 -t8 -d30s --latency http://10.60.82.91/</p> <p>Nginx: 86% * 16 = 1376% ， 达到CPU瓶颈
+<img src="/assets/img/img_18.bce9d9f7.png" alt="">
+Wrk: CPU = 40% * 8 = 320%
+<img src="/assets/img/img_19.769997bc.png" alt=""></p> <h4 id="_2-locust-httpuser记录"><a href="#_2-locust-httpuser记录" class="header-anchor">#</a> （2）Locust HttpUser记录</h4> <h5 id="_1进程-10并发-qps-512"><a href="#_1进程-10并发-qps-512" class="header-anchor">#</a> 1进程：（10并发，QPS：512）</h5> <p><img src="/assets/img/img_20.e6213689.png" alt="">
+Nginx: （CPU：8.6%）
+<img src="/assets/img/img_21.ce5d42a7.png" alt="">
+Locust: （CPU：100%， 单核CPU达到瓶颈）
+<img src="/assets/img/img_22.5272780e.png" alt=""></p> <h5 id="_8进程-100并发-qps-3300"><a href="#_8进程-100并发-qps-3300" class="header-anchor">#</a> 8进程：（100并发，QPS：3300）</h5> <p><img src="/assets/img/img_23.1efd280d.png" alt="">
+Nginx:  （CPU：50%）
+<img src="/assets/img/img_24.6438259b.png" alt="">
+locust：（CPU：800%， CPU达到瓶颈）
+<img src="/assets/img/img_25.74461a1e.png" alt=""></p> <h4 id="_3-locust-fasthttpuser记录"><a href="#_3-locust-fasthttpuser记录" class="header-anchor">#</a> （3）Locust FastHttpUser记录</h4> <h5 id="_1进程-10并发-qps-1836-90-rt-5ms"><a href="#_1进程-10并发-qps-1836-90-rt-5ms" class="header-anchor">#</a> 1进程：（10并发，QPS：1836,  90%RT: 5ms）</h5> <p><img src="/assets/img/img_26.61d82889.png" alt="">
+Nginx: （CPU：24%）
+<img src="/assets/img/img_27.577a2789.png" alt="">
+Locust: （CPU：100%， 单核CPU达到瓶颈）
+<img src="/assets/img/img_28.00cb4a74.png" alt=""></p> <h5 id="_8进程-100并发-qps-11000-90-rt-7ms"><a href="#_8进程-100并发-qps-11000-90-rt-7ms" class="header-anchor">#</a> 8进程：（100并发，QPS：11000, 90%RT: 7ms）</h5> <p><img src="/assets/img/img_29.9c721f60.png" alt="">
+Nginx:（CPU：150%）
+<img src="/assets/img/img_30.912a295f.png" alt="">
+locust：（CPU：800%， CPU达到瓶颈）
+<img src="/assets/img/img_31.38f18494.png" alt=""></p> <h4 id="_4-jmeter-测试记录"><a href="#_4-jmeter-测试记录" class="header-anchor">#</a> （4）Jmeter 测试记录</h4> <h5 id="_8核-100并发-qps-38500"><a href="#_8核-100并发-qps-38500" class="header-anchor">#</a> 8核(100并发，QPS：38500)</h5> <p><img src="/assets/img/img_32.ee7e9253.png" alt="">
+Nginx：（CPU：397.3%）
+<img src="/assets/img/img_33.4b1ef990.png" alt="">
+Jmeter：（CPU：681%）
+<img src="/assets/img/img_34.5693eb37.png" alt=""></p> <h2 id="参考资料"><a href="#参考资料" class="header-anchor">#</a> 参考资料</h2> <ul><li><a href="https://my.oschina.net/leichen/blog/4399759" target="_blank" rel="noopener noreferrer">性能测试之并发模型对比(Jmeter/Locust/Gatling)<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://coolshell.cn/articles/17381.html" target="_blank" rel="noopener noreferrer">左耳朵耗子-性能测试应该怎么做？<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://download.csdn.net/download/u011608531/13991206" target="_blank" rel="noopener noreferrer">Dynatrace-2016全球零售业数字化性能基准报告<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://download.csdn.net/download/u011608531/12792649" target="_blank" rel="noopener noreferrer">支付宝性能测试实战[剑风]<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://download.csdn.net/download/u011608531/12792619" target="_blank" rel="noopener noreferrer">网银在线性能测试指南（京东金融）<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://juejin.cn/post/6844904094054744072" target="_blank" rel="noopener noreferrer">聊聊ab、wrk、JMeter、Locust这些压测工具的并发模型差别<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://www.cnblogs.com/quanxiaoha/p/10661650.html" target="_blank" rel="noopener noreferrer">性能工具wrk介绍<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://docs.locust.io/en/stable/installation.html" target="_blank" rel="noopener noreferrer">Locust官方文档<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://www.jianshu.com/p/50b6771eb853" target="_blank" rel="noopener noreferrer">mac安装locust问题：解决MacOS升级后出现xcrun: error: invalid active developer path, missing xcrun的问题<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/skills/server/interface-test-guide.html" class="prev">
+        服务端接口测试指南
+      </a></span> <span class="next"><a href="/skills/server/perf-tools.html">
+        服务端性能测试-工具篇
+      </a>
+      →
+    </span></p></div>  <!----></main></div><div class="global-ui"><div></div><!----></div></div>
+    <script src="/assets/js/app.25bd28d3.js" defer></script><script src="/assets/js/41.97257184.js" defer></script><script src="/assets/js/2.f52b2b3c.js" defer></script><script src="/assets/js/3.88adff4e.js" defer></script>
+  </body>
+</html>

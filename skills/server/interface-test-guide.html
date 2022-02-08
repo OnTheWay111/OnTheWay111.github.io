@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>服务端接口测试指南 | 在路上的博客</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <script language="javascript" type="text/javascript" src="/js/pgmanor-self.js"></script>
+    <link rel="icon" href="/image/favicon.ico">
+    <script>
+        var _hmt = _hmt || [];
+            (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?64ae7cd356095ffe37f635a2b38d97c9";
+            var s = document.getElementsByTagName("script")[0]; 
+            s.parentNode.insertBefore(hm, s);
+            })();
+        </script>
+    <meta name="description" content="寻找普通人的自由之路">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
+    <link rel="preload" href="/assets/css/0.styles.653dd393.css" as="style"><link rel="preload" href="/assets/js/app.25bd28d3.js" as="script"><link rel="preload" href="/assets/js/41.97257184.js" as="script"><link rel="preload" href="/assets/js/2.f52b2b3c.js" as="script"><link rel="preload" href="/assets/js/17.642edada.js" as="script"><link rel="prefetch" href="/assets/js/10.11042c24.js"><link rel="prefetch" href="/assets/js/11.f7dfcce2.js"><link rel="prefetch" href="/assets/js/12.51543684.js"><link rel="prefetch" href="/assets/js/13.bc21eaa0.js"><link rel="prefetch" href="/assets/js/14.b1348eac.js"><link rel="prefetch" href="/assets/js/15.ab05aca9.js"><link rel="prefetch" href="/assets/js/16.e71d09fd.js"><link rel="prefetch" href="/assets/js/18.07da16b4.js"><link rel="prefetch" href="/assets/js/19.f77734ce.js"><link rel="prefetch" href="/assets/js/20.3fa78d5c.js"><link rel="prefetch" href="/assets/js/21.f38a0ec4.js"><link rel="prefetch" href="/assets/js/22.e2a2f4fb.js"><link rel="prefetch" href="/assets/js/23.e99e466a.js"><link rel="prefetch" href="/assets/js/24.5c51c760.js"><link rel="prefetch" href="/assets/js/25.5197e8da.js"><link rel="prefetch" href="/assets/js/26.11058d88.js"><link rel="prefetch" href="/assets/js/27.322696be.js"><link rel="prefetch" href="/assets/js/28.953d911f.js"><link rel="prefetch" href="/assets/js/29.0309dcea.js"><link rel="prefetch" href="/assets/js/3.88adff4e.js"><link rel="prefetch" href="/assets/js/30.a459af8c.js"><link rel="prefetch" href="/assets/js/31.bc400b07.js"><link rel="prefetch" href="/assets/js/32.100f1f9b.js"><link rel="prefetch" href="/assets/js/33.561f5277.js"><link rel="prefetch" href="/assets/js/34.faabc755.js"><link rel="prefetch" href="/assets/js/35.798439ec.js"><link rel="prefetch" href="/assets/js/36.33da635f.js"><link rel="prefetch" href="/assets/js/37.16ff3375.js"><link rel="prefetch" href="/assets/js/38.dc5ce753.js"><link rel="prefetch" href="/assets/js/39.38583c95.js"><link rel="prefetch" href="/assets/js/4.873423c6.js"><link rel="prefetch" href="/assets/js/40.9521c28e.js"><link rel="prefetch" href="/assets/js/42.3085dc98.js"><link rel="prefetch" href="/assets/js/43.3c5f78b6.js"><link rel="prefetch" href="/assets/js/44.6b076331.js"><link rel="prefetch" href="/assets/js/45.d867c131.js"><link rel="prefetch" href="/assets/js/46.82103be9.js"><link rel="prefetch" href="/assets/js/47.9528b816.js"><link rel="prefetch" href="/assets/js/48.7830ec96.js"><link rel="prefetch" href="/assets/js/49.bb805b53.js"><link rel="prefetch" href="/assets/js/5.c597efbb.js"><link rel="prefetch" href="/assets/js/50.27946a8d.js"><link rel="prefetch" href="/assets/js/51.dc21e9ff.js"><link rel="prefetch" href="/assets/js/52.573492e5.js"><link rel="prefetch" href="/assets/js/53.9182f9b1.js"><link rel="prefetch" href="/assets/js/54.1378c4b7.js"><link rel="prefetch" href="/assets/js/55.13ded052.js"><link rel="prefetch" href="/assets/js/56.f161dcba.js"><link rel="prefetch" href="/assets/js/57.30e038f3.js"><link rel="prefetch" href="/assets/js/58.d3a80123.js"><link rel="prefetch" href="/assets/js/59.6d89429b.js"><link rel="prefetch" href="/assets/js/6.bde00a3d.js"><link rel="prefetch" href="/assets/js/60.1a58b6e3.js"><link rel="prefetch" href="/assets/js/61.a50bcccb.js"><link rel="prefetch" href="/assets/js/62.9245285c.js"><link rel="prefetch" href="/assets/js/63.e5938f85.js"><link rel="prefetch" href="/assets/js/64.adeb539c.js"><link rel="prefetch" href="/assets/js/65.d29bf20f.js"><link rel="prefetch" href="/assets/js/7.e33295de.js"><link rel="prefetch" href="/assets/js/8.dfc92f84.js"><link rel="prefetch" href="/assets/js/9.0ed184de.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.653dd393.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/logo.png" alt="在路上的博客" class="logo"> <span class="site-name can-hide">在路上的博客</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="感悟" class="dropdown-title"><span class="title">感悟</span> <span class="arrow down"></span></button> <button type="button" aria-label="感悟" class="mobile-dropdown-title"><span class="title">感悟</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/meaning/find-job-value/" class="nav-link">
+  如何寻找自己的职业价值观
+</a></li><li class="dropdown-item"><!----> <a href="/meaning/code-for-life-meaning/" class="nav-link">
+  编程是赋予普通人的超能力
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术" class="dropdown-title"><span class="title">技术</span> <span class="arrow down"></span></button> <button type="button" aria-label="技术" class="mobile-dropdown-title"><span class="title">技术</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          HttpRunner V3.X
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://ontheway.cool/HttpRunner3DocsForCN/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  中文文档
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://docs.httprunner.org/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  英文文档
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li><li class="dropdown-item"><h4>
+          Android
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/skills/android/android-fluency-quality-manage/" class="nav-link">
+  流畅度评估及卡顿优化
+</a></li><li class="dropdown-subitem"><a href="/skills/android/Android-power-consumption/" class="nav-link">
+  后台耗电分析及优化
+</a></li><li class="dropdown-subitem"><a href="/skills/android/Android-https-capture/" class="nav-link">
+  https抓包指南
+</a></li></ul></li><li class="dropdown-item"><h4>
+          服务端
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/skills/server/interface-test-guide/" class="nav-link">
+  服务端接口测试指南
+</a></li><li class="dropdown-subitem"><a href="/skills/server/perf-getting-start/" class="nav-link">
+  服务端性能测试-入门指南
+</a></li><li class="dropdown-subitem"><a href="/skills/server/perf-tools/" class="nav-link">
+  服务端性能测试-工具篇
+</a></li></ul></li><li class="dropdown-item"><h4>
+          其他
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/skills/others/test-audio-video/" class="nav-link">
+  实时音视频质量评估方案
+</a></li><li class="dropdown-subitem"><a href="/skills/others/good-tools/" class="nav-link">
+  好工具推荐
+</a></li><li class="dropdown-subitem"><a href="/skills/others/clean-macBook-diskSpace/" class="nav-link">
+  如何释放MacBook上的磁盘空间
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="生活" class="dropdown-title"><span class="title">生活</span> <span class="arrow down"></span></button> <button type="button" aria-label="生活" class="mobile-dropdown-title"><span class="title">生活</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          孕产检育儿
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://ontheway.cool/pregnantBirth/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  孕产检
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="/life/Baby/" class="nav-link">
+  育婴笔记
+</a></li></ul></li><li class="dropdown-item"><h4>
+          北京房
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/life/BJHouse/" class="nav-link">
+  北京购房指南
+</a></li><li class="dropdown-subitem"><a href="/life/BJHouse/buyHouseInBeiJing/" class="nav-link">
+  2018北京购房回顾
+</a></li><li class="dropdown-subitem"><a href="/life/BJHouse/analyzeHouse/" class="nav-link">
+  目标房产对比分析
+</a></li></ul></li><li class="dropdown-item"><h4>
+          北京车
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/life/BJCar/" class="nav-link">
+  北京新能源车上牌流程
+</a></li></ul></li><li class="dropdown-item"><h4>
+          北京医
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/life/BJhospital/china-hospital-rank/" class="nav-link">
+  2019北京医院科室排名
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="财务" class="dropdown-title"><span class="title">财务</span> <span class="arrow down"></span></button> <button type="button" aria-label="财务" class="mobile-dropdown-title"><span class="title">财务</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          保险
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/" class="nav-link">
+  待更新
+</a></li></ul></li><li class="dropdown-item"><h4>
+          财务规划
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/" class="nav-link">
+  待更新
+</a></li></ul></li><li class="dropdown-item"><h4>
+          理财
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/" class="nav-link">
+  待更新
+</a></li></ul></li></ul></div></div><div class="nav-item"><a href="/travel/" class="nav-link">
+  旅行
+</a></div><div class="nav-item"><a href="/liuyan/" class="nav-link">
+  留言板
+</a></div><div class="nav-item"><a href="/about/" class="nav-link">
+  AboutMe
+</a></div> <a href="https://github.com/OnTheWay111/OnTheWay111.github.io" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="感悟" class="dropdown-title"><span class="title">感悟</span> <span class="arrow down"></span></button> <button type="button" aria-label="感悟" class="mobile-dropdown-title"><span class="title">感悟</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/meaning/find-job-value/" class="nav-link">
+  如何寻找自己的职业价值观
+</a></li><li class="dropdown-item"><!----> <a href="/meaning/code-for-life-meaning/" class="nav-link">
+  编程是赋予普通人的超能力
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术" class="dropdown-title"><span class="title">技术</span> <span class="arrow down"></span></button> <button type="button" aria-label="技术" class="mobile-dropdown-title"><span class="title">技术</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          HttpRunner V3.X
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://ontheway.cool/HttpRunner3DocsForCN/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  中文文档
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://docs.httprunner.org/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  英文文档
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li><li class="dropdown-item"><h4>
+          Android
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/skills/android/android-fluency-quality-manage/" class="nav-link">
+  流畅度评估及卡顿优化
+</a></li><li class="dropdown-subitem"><a href="/skills/android/Android-power-consumption/" class="nav-link">
+  后台耗电分析及优化
+</a></li><li class="dropdown-subitem"><a href="/skills/android/Android-https-capture/" class="nav-link">
+  https抓包指南
+</a></li></ul></li><li class="dropdown-item"><h4>
+          服务端
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/skills/server/interface-test-guide/" class="nav-link">
+  服务端接口测试指南
+</a></li><li class="dropdown-subitem"><a href="/skills/server/perf-getting-start/" class="nav-link">
+  服务端性能测试-入门指南
+</a></li><li class="dropdown-subitem"><a href="/skills/server/perf-tools/" class="nav-link">
+  服务端性能测试-工具篇
+</a></li></ul></li><li class="dropdown-item"><h4>
+          其他
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/skills/others/test-audio-video/" class="nav-link">
+  实时音视频质量评估方案
+</a></li><li class="dropdown-subitem"><a href="/skills/others/good-tools/" class="nav-link">
+  好工具推荐
+</a></li><li class="dropdown-subitem"><a href="/skills/others/clean-macBook-diskSpace/" class="nav-link">
+  如何释放MacBook上的磁盘空间
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="生活" class="dropdown-title"><span class="title">生活</span> <span class="arrow down"></span></button> <button type="button" aria-label="生活" class="mobile-dropdown-title"><span class="title">生活</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          孕产检育儿
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://ontheway.cool/pregnantBirth/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  孕产检
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="/life/Baby/" class="nav-link">
+  育婴笔记
+</a></li></ul></li><li class="dropdown-item"><h4>
+          北京房
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/life/BJHouse/" class="nav-link">
+  北京购房指南
+</a></li><li class="dropdown-subitem"><a href="/life/BJHouse/buyHouseInBeiJing/" class="nav-link">
+  2018北京购房回顾
+</a></li><li class="dropdown-subitem"><a href="/life/BJHouse/analyzeHouse/" class="nav-link">
+  目标房产对比分析
+</a></li></ul></li><li class="dropdown-item"><h4>
+          北京车
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/life/BJCar/" class="nav-link">
+  北京新能源车上牌流程
+</a></li></ul></li><li class="dropdown-item"><h4>
+          北京医
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/life/BJhospital/china-hospital-rank/" class="nav-link">
+  2019北京医院科室排名
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="财务" class="dropdown-title"><span class="title">财务</span> <span class="arrow down"></span></button> <button type="button" aria-label="财务" class="mobile-dropdown-title"><span class="title">财务</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          保险
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/" class="nav-link">
+  待更新
+</a></li></ul></li><li class="dropdown-item"><h4>
+          财务规划
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/" class="nav-link">
+  待更新
+</a></li></ul></li><li class="dropdown-item"><h4>
+          理财
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/" class="nav-link">
+  待更新
+</a></li></ul></li></ul></div></div><div class="nav-item"><a href="/travel/" class="nav-link">
+  旅行
+</a></div><div class="nav-item"><a href="/liuyan/" class="nav-link">
+  留言板
+</a></div><div class="nav-item"><a href="/about/" class="nav-link">
+  AboutMe
+</a></div> <a href="https://github.com/OnTheWay111/OnTheWay111.github.io" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Server</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/skills/server/interface-test-guide.html" aria-current="page" class="active sidebar-link">服务端接口测试指南</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/skills/server/interface-test-guide.html#_1、了解接口" class="sidebar-link">1、了解接口</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/skills/server/interface-test-guide.html#_1-1-接口做了哪些事" class="sidebar-link">1.1 接口做了哪些事？</a></li><li class="sidebar-sub-header"><a href="/skills/server/interface-test-guide.html#_1-2-如何保障接口质量" class="sidebar-link">1.2 如何保障接口质量</a></li></ul></li><li class="sidebar-sub-header"><a href="/skills/server/interface-test-guide.html#_2、如何测试接口" class="sidebar-link">2、如何测试接口</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/skills/server/interface-test-guide.html#_1-测试数据" class="sidebar-link">（1）测试数据</a></li><li class="sidebar-sub-header"><a href="/skills/server/interface-test-guide.html#_2-测试用例设计" class="sidebar-link">（2）测试用例设计</a></li><li class="sidebar-sub-header"><a href="/skills/server/interface-test-guide.html#_3-如何做接口断言" class="sidebar-link">（3）如何做接口断言？</a></li></ul></li><li class="sidebar-sub-header"><a href="/skills/server/interface-test-guide.html#_3、如何用接口测试一个系统" class="sidebar-link">3、如何用接口测试一个系统？</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/skills/server/interface-test-guide.html#_1-复杂系统测试用例结构" class="sidebar-link">（1）复杂系统测试用例结构</a></li><li class="sidebar-sub-header"><a href="/skills/server/interface-test-guide.html#_2-测试数据管理" class="sidebar-link">（2）测试数据管理</a></li></ul></li><li class="sidebar-sub-header"><a href="/skills/server/interface-test-guide.html#_4、接口测试进化" class="sidebar-link">4、接口测试进化</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/skills/server/interface-test-guide.html#_1-回归测试工作量大-录制线上流量回归" class="sidebar-link">（1）回归测试工作量大？录制线上流量回归</a></li><li class="sidebar-sub-header"><a href="/skills/server/interface-test-guide.html#_2-用例编写成本高-通用接口自动测试方案" class="sidebar-link">（2）用例编写成本高？通用接口自动测试方案</a></li><li class="sidebar-sub-header"><a href="/skills/server/interface-test-guide.html#_3-快速校验接口数据结构变化-接口自动化全量字段校验" class="sidebar-link">（3）快速校验接口数据结构变化？接口自动化全量字段校验</a></li></ul></li></ul></li><li><a href="/skills/server/perf-getting-start.html" class="sidebar-link">服务端性能测试入门指南</a></li><li><a href="/skills/server/perf-tools.html" class="sidebar-link">服务端性能测试-工具篇</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><blockquote><p>本文为内部培训文档，意在从基础到深入分享单接口测试及系统接口测试内容。</p> <p>此文 借鉴和引用了多位同行的文章内容，均已标注内容来源。大家可通过链接查看相关内容原文。</p></blockquote> <p><img src="/assets/img/1.ced20d81.jpg" alt="">
+测试的第一目标是质量保障，所以我们从质量保障的纬度，来了解接口测试。</p> <h2 id="_1、了解接口"><a href="#_1、了解接口" class="header-anchor">#</a> 1、了解接口</h2> <h3 id="_1-1-接口做了哪些事"><a href="#_1-1-接口做了哪些事" class="header-anchor">#</a> 1.1 接口做了哪些事？</h3> <p>首先，从功能角度理解。</p> <p>比如，从一个用户购买一个商品的业务流程来理解：
+<img src="/assets/img/img_1.ca7930f9.png" alt="img_1.png"></p> <ul><li>新用户注册：通过<strong>注册接口 新增</strong>一条用户数据（Create）；</li> <li>注册成功后登录：通过<strong>登录接口</strong>，首先根据用户名**查询（Select）**密码，然后校验密码，密码校验成功，通过规则和加密 <strong>新建（Create）</strong> token签名，将token发送给客户端；</li> <li>搜索商品：通过<strong>商品搜索接口</strong>搜索目标商品，本质是从商品数据库中进行<strong>条件查询（Select）</strong>；</li> <li>查看商品详情：商品ID + <strong>商品详情接口</strong>，<strong>查询</strong>商品详情（Select）；</li> <li>选择商品加入购物车：<strong>添加购物车接口</strong>，<strong>更新</strong>购物车数据，库存数据减一（Update）；</li> <li>创建地址并选择地址：<strong>新建地址接口，新增</strong>一个新的地址（Create）；</li> <li>下单&amp;结算：<strong>下单接口，新增</strong>一条新的订单数据（Create）；</li> <li>支付：<strong>支付接口</strong>，如果支付成功，<strong>新增</strong>一条支付信息，订单状态<strong>更新</strong>为已支付，<strong>新增</strong>一条电子发票，<strong>新增</strong>一条物流信息。</li></ul> <p><font color="red">接口的功能主要是客户端和服务端的数据交互，即通过接口对后端数据的增删改查，来实现用户和产品的交互。</font></p> <h3 id="_1-2-如何保障接口质量"><a href="#_1-2-如何保障接口质量" class="header-anchor">#</a> 1.2 如何保障接口质量</h3> <p>从京东网站的注册接口来看，我们需要从哪些纬度保障质量。</p> <h4 id="分析注册接口"><a href="#分析注册接口" class="header-anchor">#</a> 分析注册接口</h4> <p><strong>注册页面：</strong> <img src="/assets/img/img_2.08bf203e.png" alt="img_2.png"></p> <p><img src="/assets/img/img_3.3208ce4f.png" alt="img_3.png"></p> <p><strong>Http 注册接口：</strong></p> <p><img src="/assets/img/img_4.1ac3dbed.png" alt="img_4.png"></p> <p>Request Header:</p> <div class="language-http line-numbers-mode"><pre class="language-http"><code>
+<span class="token header-name keyword">Accept:</span> */*
+<span class="token header-name keyword">Accept-Encoding:</span> gzip, deflate, br
+<span class="token header-name keyword">Accept-Language:</span> zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7
+<span class="token header-name keyword">Connection:</span> keep-alive
+<span class="token header-name keyword">Content-Length:</span> 6028
+<span class="token header-name keyword">Content-Type:</span> application/x-www-form-urlencoded; charset=UTF-8
+<span class="token header-name keyword">Cookie:</span> shshshfpb=sJZnAsUTcZJjuNedVMhztBA%3D%3D; 
+<span class="token header-name keyword">Host:</span> reg.jd.com
+<span class="token header-name keyword">Origin:</span> https://reg.jd.com
+<span class="token header-name keyword">Referer:</span> https://reg.jd.com/reg/person?ReturnUrl=https%3A//www.jd.com/
+<span class="token header-name keyword">sec-ch-ua:</span> &quot;Google Chrome&quot;;v=&quot;89&quot;, &quot;Chromium&quot;;v=&quot;89&quot;, &quot;;Not A Brand&quot;;v=&quot;99&quot;
+<span class="token header-name keyword">sec-ch-ua-mobile:</span> ?0
+<span class="token header-name keyword">Sec-Fetch-Dest:</span> empty
+<span class="token header-name keyword">Sec-Fetch-Mode:</span> cors
+<span class="token header-name keyword">Sec-Fetch-Site:</span> same-origin
+<span class="token header-name keyword">User-Agent:</span> Mozilla/5.0 (Macintosh; Intel Mac OS X 11_2_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.128 Safari/537.36
+<span class="token header-name keyword">X-Requested-With:</span> XMLHttpRequest
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br></div></div><p>Request Body：（忽略部分无法解读参数）</p> <div class="language-http line-numbers-mode"><pre class="language-http"><code>
+<span class="token header-name keyword">uuid:</span> 68455e864c894bda845de413849204d0
+<span class="token header-name keyword">authCodeStrategy:</span> 1  (验证码策略)
+<span class="token header-name keyword">phone:</span> +00861553605xxxx（手机号）
+<span class="token header-name keyword">mobileCode:</span> 116547（手机验证码）
+<span class="token header-name keyword">regName:</span> demo83520（注册的用户名）
+<span class="token header-name keyword">email:</span> xxx@163.com（注册邮箱）
+<span class="token header-name keyword">mailCode:</span> 661591（邮箱验证码）
+<span class="token header-name keyword">pwd:</span> MvaEqtzkZ4/R4P3wMoRIuZpA4egWYBmz7bikspIWRYwozJgOHJQlQW8POp8elFhi7OXchoz1OPRoFwxqjWpwcWQCUABx5oovhFxLZ0p8CqB3s0lNDz9QlF8ZYMBanwk+Cne4mXMOTop9OGD8XF8YPqb4qkoehUDcBoZyRv1Vx8A=（密码加密字符串）
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><p>接下来，从接口开发设计角度，分析注册接口。因为是纯黑盒角度，所以从UI交互和接口参数两方面分析注册接口的设计逻辑。</p> <h5 id="ui交互角度分析"><a href="#ui交互角度分析" class="header-anchor">#</a> UI交互角度分析</h5> <ul><li>同样手机号、不同邮箱最多可以注册3个账号；</li> <li>用户名：
+<ul><li>支持中文、英文、数字、&quot;-&quot;、&quot;_&quot;的组合，4-20个字符，不能是纯数字；</li> <li>用户名不能重复；</li></ul></li> <li>密码：长度只能在8-20个字符之间，建议使用字母、数字和符号两种及以上组合；</li> <li>不能频繁注册；</li></ul> <h5 id="接口参数分析-取几种主要参数"><a href="#接口参数分析-取几种主要参数" class="header-anchor">#</a> 接口参数分析（取几种主要参数）</h5> <ul><li>uuid：用户唯一ID？uid生成规则？</li> <li>phone：注册手机号格式校验？</li> <li>mobileCode：手机验证码位数、字符类型校验？</li> <li>regName：用户名规则校验？</li> <li>email：注册邮箱格式校验？</li> <li>mailCode：邮箱验证码 位数、字符类型校验？</li> <li>pwd：密码加密后字符串</li></ul> <h2 id="_2、如何测试接口"><a href="#_2、如何测试接口" class="header-anchor">#</a> 2、如何测试接口</h2> <p>接口测试，主要分三步：</p> <ol><li>准备测试数据（可能不需要）；</li> <li>API测试工具，发起请求；</li> <li>验证返回结果的Response；</li></ol> <h3 id="_1-测试数据"><a href="#_1-测试数据" class="header-anchor">#</a> （1）测试数据</h3> <h4 id="测试数据生成方式"><a href="#测试数据生成方式" class="header-anchor">#</a> 测试数据生成方式：</h4> <ul><li>基于API生成数据；</li> <li>数据库直接构造数据；</li> <li>UI操作生成数据；</li></ul> <h4 id="生成时机"><a href="#生成时机" class="header-anchor">#</a> 生成时机：</h4> <ul><li>实时创建：测试用例执行过程中生成（会导致测试用例执行时间变长）；</li> <li>事先创建：测试执行前，批量生成所有测试数据（可能事先创建好的数据已经被修改而无法正常使用）；</li> <li>测试环境不稳定，导致测试数据的顺利创建；</li></ul> <h4 id="脏数据"><a href="#脏数据" class="header-anchor">#</a> 脏数据：</h4> <ul><li>概念：脏数据是指，数据在被实际使用前，已经被进行了非预期的修改。</li></ul> <h4 id="测试数据分类"><a href="#测试数据分类" class="header-anchor">#</a> 测试数据分类：</h4> <ul><li>“死水数据”：指相对稳定，不会在使用过程中改变状态，并且可以被多次使用的数据。这类数据适合事先创建。
+<ul><li>注意：“死水数据”是相对稳定的，是否稳定由测试目的决定。比如用户数据，在测试非用户相关测试时基本稳定，但是对于专门测试用户账号的测试用例来讲，往往涉及到用户注销之类功能，所以此时就是不稳定的。</li></ul></li> <li>“活水数据”：指只能被一次性使用，或者经常会被修改的数据。例如 优惠券、订单之类的数据。</li></ul> <h3 id="_2-测试用例设计"><a href="#_2-测试用例设计" class="header-anchor">#</a> （2）测试用例设计</h3> <p>用例设计从两个维度来设计，功能性需求和非功能性需求。</p> <h4 id="功能性需求"><a href="#功能性需求" class="header-anchor">#</a> 功能性需求</h4> <blockquote><p>用例设计法参考：<a href="https://www.cnblogs.com/deliaries/p/12393843.html" target="_blank" rel="noopener noreferrer">软件测试基础---流程和用例设计方法-piecesof<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p></blockquote> <p><img src="/assets/img/img_5.5f671c31.png" alt="img_5.png"></p> <h4 id="非功能性需求-安全纬度"><a href="#非功能性需求-安全纬度" class="header-anchor">#</a> 非功能性需求-安全纬度</h4> <ul><li>敏感信息是否加密：密码前后端传输是否加密</li> <li>sql注入？（结合用户的输入数据动态构造 Sql 语句，如果用户输入的数据被构造成恶意 Sql 代码，Web 应用又未对动态构造的 Sql 语句使用的参数进行审查，则会带来意想不到的危险。）</li> <li>逻辑漏洞：
+<ul><li>批量注册重复消费问题？（比如，同一时间，同样的参数，高并发请求，是否只有一个Http请求注册成功）</li> <li>同一手机号，不同邮箱，是否可以注册超过3个用户？</li></ul></li></ul> <h4 id="非功能性需求-性能纬度"><a href="#非功能性需求-性能纬度" class="header-anchor">#</a> 非功能性需求-性能纬度</h4> <ul><li>基准性能是否达标？比如单请求要求小于500ms？</li> <li>高并发性能评估：通过性能测试手段，评估注册接口性能。具体查看：<a href="https://www.ontheway.cool/posts/38522.html" target="_blank" rel="noopener noreferrer">服务端性能测试-入门指南<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> 和 <a href="https://www.ontheway.cool/posts/42721.html" target="_blank" rel="noopener noreferrer">服务端性能测试-工具篇<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul> <p><font color="red">功能性需求纬度：利用正交法，最少也有29条用例。</font><br> <font color="red">非功能性需求纬度-安全纬度：4条用例。</font><br> <font color="red">非功能性需求纬度-性能纬度：2条用例。</font><br></p> <h3 id="_3-如何做接口断言"><a href="#_3-如何做接口断言" class="header-anchor">#</a> （3）如何做接口断言？</h3> <ul><li>Http Response断言：
+<ul><li>Http 状态码</li> <li>Response Body 字段、结构 校验</li> <li>Response Header</li></ul></li> <li>数据断言：
+<ul><li>对数据库中的数据断言</li></ul></li> <li>响应时间满足要求吗？</li></ul> <h2 id="_3、如何用接口测试一个系统"><a href="#_3、如何用接口测试一个系统" class="header-anchor">#</a> 3、如何用接口测试一个系统？</h2> <h3 id="_1-复杂系统测试用例结构"><a href="#_1-复杂系统测试用例结构" class="header-anchor">#</a> （1）复杂系统测试用例结构</h3> <blockquote><p>参考：<a href="https://www.ontheway.cool/HttpRunner3DocsForCN/concepts/step_case_suite/" target="_blank" rel="noopener noreferrer">HttpRunner之step/case/suite<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p></blockquote> <p>测试步骤(testStep) -&gt; 测试用例(testCase) -&gt; 测试场景/测试用例集(testSuite)</p> <p><img src="/assets/img/img_6.9ef46d1e.png" alt="img_6.png"></p> <h4 id="测试步骤-teststep"><a href="#测试步骤-teststep" class="header-anchor">#</a> 测试步骤(testStep)</h4> <p>对于接口测试来说，每一个测试步骤应该就对应一个 API 的请求描述。</p> <h4 id="测试用例-testcase"><a href="#测试用例-testcase" class="header-anchor">#</a> 测试用例(testCase)</h4> <p>测试用例（testcase）应该是为了测试某个特定的功能逻辑而精心设计的，并且至少包含如下几点：</p> <ul><li>明确的测试目的</li> <li>明确的输入</li> <li>明确的运行环境</li> <li>明确的测试步骤描述</li> <li>明确的预期结果</li></ul> <p>测试用例设计原则：</p> <ul><li>测试用例应该是完整且独立的，每条测试用例都应该可以独立运行；</li> <li>测试用例由测试脚本和测试数据两部分构成。
+<ul><li>测试脚本：测试脚本只关注被测的业务功能逻辑，包括前置条件、测试步骤、预期结果等。</li> <li>测试数据：是对应测试的业务数据。</li> <li>测试数据和测试脚本分离：方便实现数据驱动测试。通过对测试脚本传入一组数据，实现同一业务功能在不同数据逻辑下的测试验证。比如：购买商品接口，会员和非会员的商品价格是不一样的，优惠券逻辑也不一样。所以通过不同的用户数据，可以测试会员和非会员购物逻辑。</li></ul></li></ul> <h4 id="测试用例集-testsuite"><a href="#测试用例集-testsuite" class="header-anchor">#</a> 测试用例集(testSuite)</h4> <p>测试用例集是测试用例的无序集合，集合中的测试用例应该互相独立，不存在先后依赖关系。<br>
+如果确实存在先后依赖关系，例如登录功能和下单功能。正确的做法应该是，在下单测试用例的前置步骤中执行登录操作。</p> <h3 id="_2-测试数据管理"><a href="#_2-测试数据管理" class="header-anchor">#</a> （2）测试数据管理</h3> <blockquote><p>来源：<a href="https://testerhome.com/topics/4773" target="_blank" rel="noopener noreferrer">孙高飞-测试框架中的数据管理策略<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p></blockquote> <p>数据的两个属性：</p> <ul><li>作用域：共享数据（适用于testSuite级别）、隔离数据（适用于testCase级别）</li> <li>创建方式：调用开发接口、使用Sql、独立开发数据模版</li></ul> <h4 id="测试数据的作用域"><a href="#测试数据的作用域" class="header-anchor">#</a> 测试数据的作用域</h4> <h5 id="共享数据-所有case或一部分case共同使用的测试数据"><a href="#共享数据-所有case或一部分case共同使用的测试数据" class="header-anchor">#</a> 共享数据：所有case或一部分case共同使用的测试数据</h5> <ul><li>优点：速度快，数据只需要创建一次就可以给很多 case 使用。</li> <li>缺点：
+<ul><li>数据为很多 case 准备的，你很难分清哪些数据是给这个 case 准备的，哪些数据是给另一个 case 准备的。case 的可读性低</li> <li>case 之间互相有影响。因为待测的功能本身就会对数据库造成影响。很可能一个 case 的失败或者成功就会造成一批 case 的 fail</li> <li>数据本身不能扩展，稍微一改动，影响就很广泛。数个甚至数十个 case 的失败是很常见的。维护脚本的成本比较高</li></ul></li></ul> <h5 id="隔离数据-每个case都有独享测试数据-case之间互不影响-即每个case都做setup和teardown的操作。case执行前创造数据-执行后销毁数据。"><a href="#隔离数据-每个case都有独享测试数据-case之间互不影响-即每个case都做setup和teardown的操作。case执行前创造数据-执行后销毁数据。" class="header-anchor">#</a> 隔离数据：每个case都有独享测试数据，case之间互不影响，即每个case都做setup和teardown的操作。case执行前创造数据，执行后销毁数据。</h5> <ul><li>优点：case 之间互不影响，数据之间互不影响。case 的稳定性，可维护性，可读性等都大大提高</li> <li>缺点：速度慢。。。。灰常慢。。。因为每个 case 都有很多的磁盘 IO 操作。。。维护数据的时间比调用功能的时间都要长的情况并不奇怪。 OK，这种方式其实是我们在测试中运用的最多的方式。虽然它很慢，而且对很多人来说实现起来也比较难。但是它带来的可维护性实在太诱人。我再也不用整天维护那些不稳定的脚本了。慢点就慢点吧。反正我们做接口测试和 UI 自动化测试的持续集成策略也是定时运行的。 跑个 10 几分钟，几十分钟的我也不在乎。 只要不是做监控代码变动的策略，一切好说。</li></ul> <h5 id="敏感数据-账号、密码、key等敏感信息-设置为有权限限制的环境变量。"><a href="#敏感数据-账号、密码、key等敏感信息-设置为有权限限制的环境变量。" class="header-anchor">#</a> 敏感数据：账号、密码、key等敏感信息，设置为有权限限制的环境变量。</h5> <ul><li>敏感信息不能公开的主要原因：
+<ul><li>加强权限管控：参与项目的开发人员可能会有很多，大家都有读取代码仓库的权限，但是像 key 这类极度敏感的信息不应该所有人都有权限获取；</li> <li>减少代码泄漏的危害性：假如代码出现泄漏，敏感数据信息不应该也同时泄漏。</li></ul></li> <li>推荐的解决方案：
+<ul><li>对服务器进行权限管控，只有运维人员（或者核心开发人员）才有登录服务器的权限；</li> <li>运维人员（或者核心开发人员）：在运行的机器上将敏感数据设置到系统的环境变量中；</li> <li>普通开发人员：只需要知道敏感信息的变量名称，在代码中通过读取环境变量的方式获取敏感数据。</li></ul></li></ul> <h4 id="如何构造数据"><a href="#如何构造数据" class="header-anchor">#</a> 如何构造数据</h4> <h5 id="调用开发接口"><a href="#调用开发接口" class="header-anchor">#</a> 调用开发接口</h5> <ul><li>优点：在脚本中实现起来相对简单，不用深入理解后台数据库。</li> <li>缺点：
+<ul><li>耦合性太高，依赖产品的其他接口创造数据的方式注定了 case 是非隔离性的。注意隔离性是 case 质量的一个重要指标。一旦创造数据的接口 bug 了，你说得有多少个 case 失败。而且在真实环境中，需要调用 N 个接口去创造你需要的数据。无法判断到底哪个接口的 bug。这已然变成了端到端测试了。能够快速定位 bug 位置，也同样是 case 质量的重要指标。</li> <li>如果做隔离数据，产品中的接口往往很难满足你销毁数据的需要，举个最常见的例子。这个世界存在一种删除机制叫做逻辑删除，也是就是产品的接口并不是真正的删除了数据库中的数据，而是用一个逻辑标示位，标示这条数据被删除了。不要再反馈给用户了。 这样其实就做不到 “隔离数据了”</li></ul></li> <li>使用建议：不建议使用。虽然该方式脚本维护成本低，但是造成用例耦合度高、隔离性差，问题定位成本高。一个被调用开发接口的BUG，可能会导致大量用例失败。</li></ul> <h5 id="直接使用-sql-就是直接写-sql-创造和销毁数据。"><a href="#直接使用-sql-就是直接写-sql-创造和销毁数据。" class="header-anchor">#</a> 直接使用 sql：就是直接写 sql 创造和销毁数据。</h5> <ul><li>优点：隔离性和bug 追踪都很好。</li> <li>缺点：如果交给测试人员在脚本中写 sql 的话，难度，可读性都不太乐观，而且太依赖测试人员本身的能力，出错率较高。不过好在我们可以在测试框架上做一些手脚，解决这个问题。</li> <li>使用建议：除查询sql外，增删改sql 慎重使用，因为实现成本高、操作风险高。需要非常了解数据库表结构和业务逻辑，删改数据很可能影响实际业务或其他同学测试。</li></ul> <h5 id="数据模版-为核心业务测试数据-创建独立的数据模版-专人独立维护。"><a href="#数据模版-为核心业务测试数据-创建独立的数据模版-专人独立维护。" class="header-anchor">#</a> 数据模版：为核心业务测试数据，创建独立的数据模版，专人独立维护。</h5> <blockquote><p>参考：<a href="https://testerhome.com/topics/24942" target="_blank" rel="noopener noreferrer">测试能效平台的诞生-国际化商城智能物料平台 · TesterHome<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p></blockquote> <ul><li>实现思路：
+<ul><li>对于数据构造较复杂，且数据关联业务多、异常数据风险高的数据（比如电商的物料数据），建议基于开发接口封装通用函数，且针对性的做好异常处理和定位。</li></ul></li> <li>优点：
+<ul><li>专人开发维护，极大降低构建复杂数据成本和风险</li> <li>降低功能测试构造数据精力，突破相关测试人力占用瓶颈。</li></ul></li> <li>缺点：开发成本高，使用重量级业务系统</li></ul> <h2 id="_4、接口测试进化"><a href="#_4、接口测试进化" class="header-anchor">#</a> 4、接口测试进化</h2> <p>回顾一下前面接口测试的内容，发现几个问题：</p> <ul><li>复杂系统动则几千个接口，回归测试工作量大；</li> <li>用例编写成本高，参数多的接口</li></ul> <h3 id="_1-回归测试工作量大-录制线上流量回归"><a href="#_1-回归测试工作量大-录制线上流量回归" class="header-anchor">#</a> （1）回归测试工作量大？录制线上流量回归</h3> <blockquote><p>参考：<a href="https://testerhome.com/topics/25641" target="_blank" rel="noopener noreferrer">录制线上流量做回归测试的正确打开方式 · TesterHome<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p></blockquote> <p><img src="/assets/img/img_7.9bdd5889.png" alt="img_7.png"> <img src="/assets/img/img_8.5a4cb2be.png" alt="img_8.png"></p> <h3 id="_2-用例编写成本高-通用接口自动测试方案"><a href="#_2-用例编写成本高-通用接口自动测试方案" class="header-anchor">#</a> （2）用例编写成本高？通用接口自动测试方案</h3> <blockquote><p>参考：<a href="https://mp.weixin.qq.com/s/ZqzjAr5ZAk-jz1Kts_Kh_w" target="_blank" rel="noopener noreferrer">通用性接口健壮性扫描方案-有赞<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p></blockquote> <p><img src="/assets/img/img_9.a0271033.png" alt="img_9.png"></p> <h3 id="_3-快速校验接口数据结构变化-接口自动化全量字段校验"><a href="#_3-快速校验接口数据结构变化-接口自动化全量字段校验" class="header-anchor">#</a> （3）快速校验接口数据结构变化？接口自动化全量字段校验</h3> <blockquote><p>来源：<a href="https://testerhome.com/topics/22561" target="_blank" rel="noopener noreferrer">接口自动化全量字段校验 · TesterHome<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p></blockquote> <p>实现：自定义接口返回数据格式 (【契约定义】)-实际响应数据格式校验 (【契约校验】) 的功能</p> <p>校验原则：</p> <ul><li>实际返回字段名要严格等于或者含契约定义字段名(根据不同匹配模式来确定)</li> <li>字段值可以值相等或类型相等</li></ul></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><!----> <span class="next"><a href="/skills/server/perf-getting-start.html">
+        服务端性能测试入门指南
+      </a>
+      →
+    </span></p></div>  <!----></main></div><div class="global-ui"><div></div><!----></div></div>
+    <script src="/assets/js/app.25bd28d3.js" defer></script><script src="/assets/js/41.97257184.js" defer></script><script src="/assets/js/2.f52b2b3c.js" defer></script><script src="/assets/js/17.642edada.js" defer></script>
+  </body>
+</html>
